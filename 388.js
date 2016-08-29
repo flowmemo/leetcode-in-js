@@ -38,7 +38,7 @@ Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another
  * @return {number}
  */
 var lengthLongestPath = function (input) {
-  'use strct'
+  'use strict'
   const p = []
   let len = input.length
   let index = 0

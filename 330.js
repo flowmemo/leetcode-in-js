@@ -27,6 +27,7 @@ Return 0.
  * @return {number}
  */
 var minPatches = function (nums, n) {
+  'use strict'
   let max = 0
   let res = 0
   let target = 1
