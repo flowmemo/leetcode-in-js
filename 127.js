@@ -54,9 +54,9 @@ var ladderLength = function (beginWord, endWord, wordList) {
 
     // only process smaller set
     if (beginSet.size <= endSet.size) {
-      ;[visited, counterpart, layerset, ref] = [beginSet, endSet, qbegin, 0]
+      ;[visited, counterpart, layerset, ref] = [beginSet, qend, qbegin, 0]
     } else {
-      ;[visited, counterpart, layerset, ref] = [endSet, beginSet, qend, 1]
+      ;[visited, counterpart, layerset, ref] = [endSet, qbegin, qend, 1]
     }
 
     let temp = new Set()
