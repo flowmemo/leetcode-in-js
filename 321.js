@@ -33,9 +33,9 @@ var maxNumber = function (nums1, nums2, k) {
   const len2 = nums2.length
   let max = Array(k).fill(0)
   for (let i = Math.max(0, k - len2); i <= len1 && i <= k; i++) {
-    let part1 = getMax(nums1, i, len1)
-    let part2 = getMax(nums2, k - i, len2)
-    let r = merge(part1, part2, i, k - i, max)
+    let part1 = getMax(nums1, i)
+    let part2 = getMax(nums2, k - i)
+    let r = merge(part1, part2, max)
     if (r) {
       max = r
     }
@@ -43,7 +43,9 @@ var maxNumber = function (nums1, nums2, k) {
   return max
 }
 
-function merge (a1, a2, l1, l2, max) {
+function merge (a1, a2, max) {
+  const l1 = a1.length
+  const l2 = a2.length
   const la = l1 + l2
   const res = Array(la)
   let i1 = 0
@@ -64,6 +66,8 @@ function merge (a1, a2, l1, l2, max) {
         res[ia] = a2[i2++]
       }
     }
+
+    // check if the current result is smaller than current 'max'
     if (res[ia] > max[ia]) {
       flag = 1
     } else if (!flag && res[ia] < max[ia]) {
@@ -76,7 +80,8 @@ function merge (a1, a2, l1, l2, max) {
   return res
 }
 
-function getMax (nums, k, len) {
+function getMax (nums, k) {
+  const len = nums.length
   const stk = []
   const res = []
   if (k === len) return nums
