@@ -29,13 +29,14 @@ Explanation:
 or
 7 -> 6 -> 3 -> 2 -> 1
 */
+
 /**
  * @param {number} n
  * @return {number}
  */
 var integerReplacement = function (n) {
   const map = new Map()
-  function helper(n) {
+  function helper (n) {
     if (n <= 3) return n - 1
     let r = map.get(n)
     if (r) return r
@@ -57,9 +58,11 @@ var integerReplacement = function (n) {
 let tc = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 237467, 2147483647
 ]
+
 let ans = [
   0, 1, 2, 2, 3, 3, 4, 3, 4, 4, 24, 32
 ]
+
 for (let i = 0; i < tc.length; i++) {
   let a = ans[i]
   let r = integerReplacement(tc[i])
