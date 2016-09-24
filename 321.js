@@ -71,7 +71,7 @@ function merge (a1, a2, max) {
     if (res[ia] > max[ia]) {
       flag = 1
     } else if (!flag && res[ia] < max[ia]) {
-      // early return when the current result is smaller than 'max'
+      // early return if the current result is smaller than 'max'
       return
     }
     ia++
