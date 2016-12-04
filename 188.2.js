@@ -24,6 +24,7 @@ var maxProfit = function (k, prices) {
   const point = countMaxTransaction(prices)
   if (k >= point) return quickProfit(prices)
 
+  // notice that the space compelexity is O(k)
   let v1 = Array(k + 1).fill(0)
   let v2 = Array(k + 1).fill(0)
   for (let i = 0; i <= k; ++i) {
