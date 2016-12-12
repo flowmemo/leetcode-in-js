@@ -13,6 +13,7 @@ Output: 7 -> 0 -> 8
  * }
  */
 
+const ListNode = require('./ListNode.js')
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2
@@ -44,24 +45,5 @@ var addTwoNumbers = function (l1, l2) {
   return preHead.next
 }
 
-// Do not include this function when submitting!
-function ListNode (val) {
-  this.val = val
-  this.next = null
-}
-
-let a1 = new ListNode(2)
-let a2 = new ListNode(4)
-let a3 = new ListNode(3)
-a1.next = a2
-a2.next = a3
-
-let b1 = new ListNode(5)
-let b2 = new ListNode(6)
-let b3 = new ListNode(4)
-b1.next = b2
-b2.next = b3
-
-let r = addTwoNumbers(a1, b1)
-console.log(r)
+module.exports = addTwoNumbers
 

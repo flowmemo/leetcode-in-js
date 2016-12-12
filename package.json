@@ -1,0 +1,27 @@
+{
+  "name": "leetcode-in-js",
+  "version": "1.0.0",
+  "description": "LeetCode solutions in JavaScript",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^3.12.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowmemo/leetcode.git"
+  },
+  "author": "flowmemo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flowmemo/leetcode/issues"
+  },
+  "homepage": "https://github.com/flowmemo/leetcode#readme"
+}

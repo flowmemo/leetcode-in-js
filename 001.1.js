@@ -22,20 +22,13 @@ var twoSum = function (nums, target) {
   const map = new Map()
   for (let i = 0; i < nums.length; ++i) {
     let cur = nums[i]
-    if (map.has(target - cur)) return [i, map.get(target - cur)]
+    if (map.has(target - cur)) {
+      const res = [i, map.get(target - cur)]
+      if (res[0] > res[1]) res.reverse()
+      return res
+    }
     map.set(nums[i], i)
   }
 }
 
-let tc = [
-  [[2, 7, 11, 15], 9],
-  [[3, 2, 4], 6]
-]
-
-let ans = [[0, 1], [1, 2]]
-
-for (let i = 0; i < ans.length; ++i) {
-  let a = ans[i].sort().join()
-  let r = twoSum(...tc[i]).sort().join()
-  console.log(a === r, a, r)
-}
+module.exports = twoSum

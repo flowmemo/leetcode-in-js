@@ -36,18 +36,4 @@ var twoSum = function (nums, target) {
   return [0, 0]
 }
 
-let tc = [
-  [[2, 7, 11, 15], 9],
-  [[3, 2, 4], 6]
-]
-
-let ans = [
-  [0, 1],
-  [1, 2]
-]
-
-for (let i = 0; i < ans.length; ++i) {
-  let a = ans[i].sort().join()
-  let r = twoSum(...tc[i]).sort().join()
-  console.log(a === r, a, r)
-}
+module.exports = twoSum

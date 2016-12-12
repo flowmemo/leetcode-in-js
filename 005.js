@@ -50,22 +50,4 @@ function maxP (s, j, k) {
   return [j + 1, k]
 }
 
-let tc = [
-  'babad',
-  'cbbd',
-  'a',
-  'abc'
-]
-
-let ans = [
-  'bab',
-  'bb',
-  'a',
-  'a'
-]
-
-for (let i = 0; i < tc.length; ++i) {
-  let a = ans[i]
-  let r = longestPalindrome(tc[i])
-  console.log(a === r, a, r)
-}
+module.exports = longestPalindrome

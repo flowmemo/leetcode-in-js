@@ -38,15 +38,4 @@ var convert = function (s, numRows) {
   return res
 }
 
-let tc = [
-  ['PAYPALISHIRING', 3]
-]
-let ans = [
-  'PAHNAPLSIIGYIR'
-]
-
-for (let i = 0; i < tc.length; ++i) {
-  let r = convert(...tc[i])
-  let a = ans[i]
-  console.log(a === r, a, r)
-}
+module.exports = convert

@@ -31,19 +31,4 @@ var lengthOfLongestSubstring = function (s) {
   return max
 }
 
-let tc = [
-  'abcabcbb',
-  'bbbbb',
-  'pwwkew',
-  ''
-]
-
-let ans = [
-  3, 1, 3, 0
-]
-
-for (let i = 0; i < ans.length; ++i) {
-  let a = ans[i]
-  let r = lengthOfLongestSubstring(tc[i])
-  console.log(a === r, a, r)
-}
+module.exports = lengthOfLongestSubstring

@@ -32,8 +32,8 @@ var findMedianSortedArrays = function (nums1, nums2) {
   let i
   let j
   while (imin <= imax) {
-    i = (imin + imax) >>> 1
-    j = ((len1 + len2) >>> 1) - i
+    i = (imin + imax) >> 1
+    j = ((len1 + len2) >> 1) - i
 
     if ((i === 0 || j === len2 || nums1[i - 1] <= nums2[j]) &&
       (i === len1 || j === 0 || nums2[j - 1] <= nums1[i])) {
@@ -47,54 +47,4 @@ var findMedianSortedArrays = function (nums1, nums2) {
     Math.max(nums1[i - 1] || -Infinity, nums2[j - 1] || -Infinity)) / 2
 }
 
-let tc = [
-  [
-    [2, 3],
-    [1, 2, 3]
-  ],
-  [
-    [1, 2, 3],
-    [4]
-  ],
-  [
-    [4],
-    [1, 2, 3]
-  ],
-  [
-    [1, 3],
-    [2]
-  ],
-  [
-    [],
-    [1, 2]
-  ],
-  [
-    [1],
-    []
-  ],
-  [
-    [1, 2],
-    []
-  ],
-  [
-    [3, 4, 5, 6, 7, 8],
-    []
-  ],
-  [
-    [1],
-    [2, 3]
-  ],
-  [
-    [1, 2, 3, 5, 6],
-    [4]
-  ]
-]
-
-let ans = [
-  2, 2.5, 2.5, 2, 1.5, 1, 1.5, 5.5, 2, 3.5
-]
-for (let i = 0; i < tc.length; i++) {
-  let a = ans[i]
-  let r = findMedianSortedArrays(...tc[i])
-  console.log(a === r, a, r)
-}
+module.exports = findMedianSortedArrays
