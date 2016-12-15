@@ -28,14 +28,4 @@ var isPalindrome = function (x) {
   return half1 === half2
 }
 
-let tc = [
-  1, 12, 121, -1, 0
-]
-
-let ans = [true, false, true, false, true]
-
-for (let i = 0; i < tc.length; ++i) {
-  let r = isPalindrome(tc[i])
-  let a = ans[i]
-  console.log(a === r, a, r)
-}
+module.exports = isPalindrome
