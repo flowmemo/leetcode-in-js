@@ -23,4 +23,3 @@ for (let t of tc) {
 
 module.exports = tc
 
-
