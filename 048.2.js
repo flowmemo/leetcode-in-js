@@ -9,6 +9,7 @@ Could you do this in-place?
 */
 
 /**
+ * in-place
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
