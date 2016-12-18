@@ -1,6 +1,4 @@
 const assert = require('assert')
-const fs = require('fs')
-const validFile = /^\d{3}(\.\d+)?\.js$/
 
 const file = process.argv[2]
 const solution = require(`../${file}`)
