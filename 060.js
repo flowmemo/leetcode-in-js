@@ -21,20 +21,20 @@ Note: Given n will be between 1 and 9 inclusive.
  * @param {number} k
  * @return {string}
  */
-var getPermutation = function(n, k) {
+var getPermutation = function (n, k) {
   let res = ''
   const used = Array(n)
-  function findChar(n) {
+  function findChar (n) {
     let i = 0
     let count = 0
-    while(count < n) {
-      if(!used[i]) count++
+    while (count < n) {
+      if (!used[i]) count++
       ++i
     }
     used[i - 1] = true
     return i
   }
-  while(n) {
+  while (n) {
     let order = (k - 1) / factorial(n - 1) + 1 | 0
     let digit = findChar(order)
     res += digit
@@ -42,11 +42,11 @@ var getPermutation = function(n, k) {
     --n
   }
   return res
-};
+}
 
-function factorial(n) {
+function factorial (n) {
   let r = 1
-  while(n) {
+  while (n) {
     r *= n
     --n
   }
