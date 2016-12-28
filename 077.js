@@ -20,24 +20,24 @@ If n = 4 and k = 2, a solution is:
  * @param {number} k
  * @return {number[][]}
  */
-var combine = function(n, k) {
+var combine = function (n, k) {
   const res = []
-  for(let i = 1; i <= n + 1 - k; ++i) {
+  for (let i = 1; i <= n + 1 - k; ++i) {
     dfs(i, n, k, [], res)
   }
   return res
-};
+}
 
-function dfs(pos, n, rcount, path, res) {
+function dfs (pos, n, rcount, path, res) {
   path.push(pos)
   rcount--
-  if(rcount == 0) {
+  if (rcount == 0) {
     res.push(path.slice())
     path.pop()
     return
   }
 
-  for(let i = pos + 1; i <= n + 1 - rcount; ++i) {
+  for (let i = pos + 1; i <= n + 1 - rcount; ++i) {
     dfs(i, n, rcount, path, res)
   }
   path.pop()
