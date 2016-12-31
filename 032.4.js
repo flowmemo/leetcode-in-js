@@ -7,21 +7,24 @@ For "(()", the longest valid parentheses substring is "()", which has length = 2
 Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4.
 */
 
-/**
+/** 
  * @param {string} s
  * @return {number}
  */
 var longestValidParentheses = function (s) {
+  // https://leetcode.com/articles/longest-valid-parentheses/
   const stk = [ -1 ]
   let res = 0
   for (let i = 0; i < s.length; ++i) {
-    if (s[i] === '(') stk.push(i + 1)
+    if (s[i] === '(') stk.push(i)
     else {
       stk.pop()
       if (stk.length) {
-        res = Math.max(res, i + 1 - stk[stk.length - 1])
+        // what is the top element now ?
+        // (the start index of longest valid paren so far) - 1
+        res = Math.max(res, i - stk[stk.length - 1])
       } else {
-        stk.push(i + 1)
+        stk.push(i)
       }
     }
   }

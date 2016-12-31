@@ -14,7 +14,7 @@ Another example is ")()())", where the longest valid parentheses substring is "(
 var longestValidParentheses = function (s) {
   const stk = []
   let res = 0
-  let prel = 0
+  let prel = 0 // length of longest valid paren ends in i
   for (let i = 0; i < s.length; ++i) {
     const c = s[i]
     if (c === '(') {
