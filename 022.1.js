@@ -43,3 +43,5 @@ function dfs (i, count, len, path, res) {
     path.pop()
   }
 };
+
+module.exports = generateParenthesis
