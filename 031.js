@@ -51,26 +51,4 @@ function reverse (arr, start, end) {
   }
 }
 
-let tc = [
-  [1, 2, 3],
-  [3, 2, 1],
-  [1, 1, 5],
-  [],
-  [1]
-]
-
-let ans = [
-  [1, 3, 2],
-  [1, 2, 3],
-  [1, 5, 1],
-  [],
-  [1]
-]
-
-for (let i = 0; i < tc.length; ++i) {
-  let a = ans[i].join()
-  nextPermutation(tc[i])
-  let r = tc[i].join()
-
-  console.log(a === r, a, r)
-}
+module.exports = nextPermutation
