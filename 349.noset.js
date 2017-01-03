@@ -42,7 +42,6 @@ var intersection = function (nums1, nums2) {
   return res
 }
 
-
 let tc = [
   [[1, 2, 2, 1], [2, 2]],
   [[2, 2], [1, 2, 2, 1]]
