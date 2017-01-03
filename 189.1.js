@@ -16,6 +16,7 @@ Special thanks to @Freezen for adding this problem and creating all test cases.
 */
 
 /**
+ * For Bidirectional Iterator in C++
  * @param {number[]} nums
  * @param {number} k
  * @return {void} Do not return anything, modify nums in-place instead.
