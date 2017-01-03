@@ -1,6 +1,6 @@
-const genLinkedList = require('../genLinkedList.js')
+const LinkedList = require('../LinkedList.js')
 
-const tc = [
+const data = [
   {
     input: [[2, 4, 3], [5, 6, 4]],
     ans: [7, 0, 8]
@@ -15,11 +15,23 @@ const tc = [
   }
 ]
 
-for (let t of tc) {
-  t.input[0] = genLinkedList(t.input[0])
-  t.input[1] = genLinkedList(t.input[1])
-  t.ans = genLinkedList(t.ans)
+const checker = require('../checkers.js').normalChecker
+function inProcessor (input) {
+  return input.map(LinkedList.buildFromArray)
 }
 
-module.exports = tc
+function outProcessor (output) {
+  return LinkedList.convertToArray(output)
+}
+
+const options = {
+  inProcessor,
+  outProcessor
+}
+
+module.exports = {
+  data,
+  checker,
+  options
+}
 

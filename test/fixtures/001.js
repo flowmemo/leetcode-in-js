@@ -1,4 +1,4 @@
-module.exports = [
+const data = [
   {
     input: [[2, 7, 11, 15], 9],
     ans: [0, 1]
@@ -12,3 +12,9 @@ module.exports = [
     ans: [1, 2]
   }
 ]
+
+const checker = require('../checkers.js').normalChecker
+module.exports = {
+  data,
+  checker
+}
