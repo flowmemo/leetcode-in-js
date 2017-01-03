@@ -1,7 +1,7 @@
 module.exports = [
   {
-    input: ["ADOBECODEBANC", "ABC"],
-    ans: "BANC"
+    input: ['ADOBECODEBANC', 'ABC'],
+    ans: 'BANC'
   },
   {
     input: ['a', 'b'],

@@ -5,15 +5,15 @@ const board = [
 ]
 module.exports = [
   {
-    input: [board, "ABCCED"],
+    input: [board, 'ABCCED'],
     ans: true
   },
   {
-    input: [board, "SEE"],
+    input: [board, 'SEE'],
     ans: true
   },
   {
-    input: [board, "ABCB"],
+    input: [board, 'ABCB'],
     ans: false
   }
 ]

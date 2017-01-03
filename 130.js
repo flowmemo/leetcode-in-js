@@ -27,7 +27,7 @@ var solve = function (board) {
   if (!row) return
   const col = board[0].length
   if (!col) return
-  function bfs(i, j) {
+  function bfs (i, j) {
     if (board[i][j] !== 'O') return
     board[i][j] = 'o'
     const q = []
@@ -64,7 +64,6 @@ var solve = function (board) {
     }
   }
 }
-
 
 let t = [
   'XXXX',
