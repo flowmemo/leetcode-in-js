@@ -112,5 +112,3 @@ console.log(nn.sumRange(0, 2) === 9)
 nn.update(1, 2)
 console.log(nn.sumRange(0, 2) === 8)
 
-
-

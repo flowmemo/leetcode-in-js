@@ -7,7 +7,7 @@ For "(()", the longest valid parentheses substring is "()", which has length = 2
 Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4.
 */
 
-/** 
+/**
  * @param {string} s
  * @return {number}
  */
