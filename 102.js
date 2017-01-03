@@ -46,3 +46,5 @@ var levelOrder = function (root) {
   }
   return res
 }
+
+module.exports = levelOrder
