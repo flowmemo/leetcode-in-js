@@ -27,3 +27,5 @@ var romanToInt = function (s) {
   }
   return res
 }
+
+module.exports = romanToInt
