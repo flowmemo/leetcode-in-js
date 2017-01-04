@@ -16,17 +16,17 @@ The maximum depth is the number of nodes along the longest path from the root no
  * @param {TreeNode} root
  * @return {number}
  */
-var maxDepth = function(root) {
-    if (!root) return 0
-    const stk = [[root, 1]]
-    let res = 0
-    while(stk.length) {
-      const [node, dep] = stk.pop()
-      res = Math.max(res, dep)
-      if (node.left) stk.push([node.left, dep + 1])
-      if (node.right) stk.push([node.right, dep + 1])
-    }
-    return res
-};
+var maxDepth = function (root) {
+  if (!root) return 0
+  const stk = [[root, 1]]
+  let res = 0
+  while (stk.length) {
+    const [node, dep] = stk.pop()
+    res = Math.max(res, dep)
+    if (node.left) stk.push([node.left, dep + 1])
+    if (node.right) stk.push([node.right, dep + 1])
+  }
+  return res
+}
 
 module.exports = maxDepth

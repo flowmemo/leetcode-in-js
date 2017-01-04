@@ -2,11 +2,11 @@
 function less (a, b) {
   return a < b
 }
- 
+
 function greater (a, b) {
   return a > b
 }
- 
+
 /**
  * Finds the position of the first element in an ordered range that has a value not less than specified value.
  * @param {Array} arr - array to search
@@ -30,7 +30,7 @@ function lowerBound (arr, first, last, val, comp = less) {
   }
   return first
 }
- 
+
 /**
  * Finds the position of the first element in an ordered range that has a value that is greater than a specified value.
  * @param {Array} arr - array to search
@@ -54,7 +54,7 @@ function upperBound (arr, first, last, val, comp = less) {
   }
   return first
 }
- 
+
 /**
  * Determin whether [first, last) of sorted `arr` contains `val`
  * @param {Array} arr - array to search
@@ -69,7 +69,7 @@ function binarySearch (arr, first, last, val, comp = less) {
   if (it < last && arr[it] === val) return true
   return false
 }
- 
+
 /**
  * Given an ordered range, finds the subrange in which all elements are equivalent to a given value.
  * @param {Array} arr - array to search
@@ -85,7 +85,7 @@ function equalRange (arr, first, last, val, comp = less) {
     exports.upperBound.apply(this, arguments)
   ]
 }
- 
+
 module.exports = {
   less,
   greater,
