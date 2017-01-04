@@ -28,7 +28,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
 var preorderTraversal = function (root) {
   const res = []
   let node = root
-  const stk = []
+  const stk = [null]
   while (node) {
     res.push(node.val)
     if (node.right) stk.push(node.right)
