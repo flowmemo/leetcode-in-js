@@ -29,14 +29,4 @@ var maxArea = function (height) {
   return res
 }
 
-let tc = [
-  [1, 2, 3, 4]
-]
-let ans = [
-  4
-]
-for (let i = 0; i < tc.length; ++i) {
-  let a = ans[i]
-  let r = maxArea(tc[i])
-  console.log(a === r, a, r)
-}
+module.exports = maxArea

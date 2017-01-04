@@ -16,3 +16,5 @@ var intToRoman = function (num) {
   const s4 = ['', 'M', 'MM', 'MMM']
   return s4[num / 1000 | 0] + s3[(num % 1000) / 100 | 0] + s2[(num % 100) / 10 | 0] + s1[num % 10]
 }
+
+module.exports = intToRoman
