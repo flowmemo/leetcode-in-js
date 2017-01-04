@@ -2,7 +2,7 @@ const assert = require('assert')
 const util = require('util')
 const cloneDeep = require('lodash').cloneDeep
 
-function normalChecker(fsolve, data, options = {}) {
+function normalChecker (fsolve, data, options = {}) {
   const inProcessor = options.inProcessor || (d => d)
   const outProcessor = options.outProcessor || (d => d)
   for (const {input, ans} of data) {
