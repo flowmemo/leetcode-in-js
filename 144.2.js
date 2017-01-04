@@ -21,7 +21,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
  *     this.left = this.right = null;
  * }
  */
-/** recursive
+/** iterative
  * @param {TreeNode} root
  * @return {number[]}
  */

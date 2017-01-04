@@ -14,7 +14,7 @@ return [1,2,3].
 Note: Recursive solution is trivial, could you do it iteratively?
 */
 
-/** iterative
+/** recursive
  * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
