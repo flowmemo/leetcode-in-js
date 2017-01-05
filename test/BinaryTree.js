@@ -1,51 +1,59 @@
-'use strict'
 const TreeNode = require('../TreeNode.js')
+
+function genNode (val) {
+  if (val === null) return null
+  return new TreeNode(val)
+}
+
+function serialize (root) {
+  const res = convertToArray(root)
+  return JSON.stringify(res)
+}
+
+function deserialize (data) {
+  const arr = JSON.parse(data)
+  return buildFromArray(arr)
+}
 
 function buildFromArray (arr) {
   const len = arr.length
   if (!len) return null
   let index = 0
-  const root = new TreeNode(arr[index++])
-  const q = [root]
-  while (q.length) {
-    let node = q.shift()
-    if (index >= len || arr[index] === null) {
-      node.left = null
-    } else {
-      node.left = new TreeNode(arr[index])
-      q.push(node.left)
+  const root = genNode(arr[index++])
+  let curLevel = [root]
+  let nextLevel = []
+  while (index < len) {
+    for (let node of curLevel) {
+      if (node) {
+        node.left = genNode(arr[index++])
+        node.right = genNode(arr[index++])
+        nextLevel.push(node.left)
+        nextLevel.push(node.right)
+      }
     }
-    ++index
-    if (index >= len || arr[index] == null) {
-      node.right = null
-    } else {
-      node.right = new TreeNode(arr[index])
-      q.push(node.right)
-    }
-    ++index
+    curLevel = nextLevel
+    nextLevel = []
   }
   return root
 }
 
 function convertToArray (root) {
   const res = []
-  if (!root) return JSON.stringify(res)
-  const q = [root]
-  while (q.length) {
-    let node = q.shift()
-    if (node) {
-      res.push(node.val)
-      q.push(node.left)
-      q.push(node.right)
-    } else {
-      res.push(null)
+  let curLevel = [root]
+  let nextLevel = []
+  let hasNonNullNode = true
+  while (hasNonNullNode) {
+    hasNonNullNode = false
+    for (let node of curLevel) {
+      if (node) {
+        res.push(node.val)
+        if (node.left || node.right) hasNonNullNode = true
+        nextLevel.push(node.left)
+        nextLevel.push(node.right)
+      } else res.push(null)
     }
-  }
-  for (let i = res.length - 1; i >= 0; --i) {
-    if (res[i] !== null) {
-      res.length = i + 1
-      break
-    }
+    curLevel = nextLevel
+    nextLevel = []
   }
   return res
 }

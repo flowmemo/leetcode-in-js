@@ -13,7 +13,10 @@ function buildFromArray (arr) {
 
 function convertToArray (root) {
   const res = []
+  const visited = new Set()
   while (root) {
+    if (visited.has(root)) throw new Error('cycled linked list!')
+    visited.add(root)
     res.push(root.val)
     root = root.next
   }

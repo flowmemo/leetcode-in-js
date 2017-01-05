@@ -7,6 +7,23 @@ function greater (a, b) {
   return a > b
 }
 
+function swap (arr, i, j) {
+  const tmp = arr[i]
+  arr[i] = arr[j]
+  arr[j] = tmp
+}
+
+function reverse (arr, first, last) {
+  let right = last - 1
+  while (first < right) {
+    const tmp = arr[first]
+    arr[first] = arr[right]
+    arr[right] = tmp
+    ++first
+    --right
+  }
+}
+
 /**
  * Finds the position of the first element in an ordered range that has a value not less than specified value.
  * @param {Array} arr - array to search
@@ -65,7 +82,7 @@ function upperBound (arr, first, last, val, comp = less) {
  * @return {bool} whether [first, last) contains `val`
  */
 function binarySearch (arr, first, last, val, comp = less) {
-  const it = exports.lowerBound.apply(this, arguments)
+  const it = lowerBound.apply(this, arguments)
   if (it < last && arr[it] === val) return true
   return false
 }
@@ -81,8 +98,8 @@ function binarySearch (arr, first, last, val, comp = less) {
  */
 function equalRange (arr, first, last, val, comp = less) {
   return [
-    exports.lowerBound.apply(this, arguments),
-    exports.upperBound.apply(this, arguments)
+    lowerBound.apply(this, arguments),
+    upperBound.apply(this, arguments)
   ]
 }
 
@@ -92,5 +109,8 @@ module.exports = {
   lowerBound,
   upperBound,
   equalRange,
-  binarySearch
+  binarySearch,
+  swap,
+  reverse
+
 }
