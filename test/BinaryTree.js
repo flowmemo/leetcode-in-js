@@ -1,7 +1,7 @@
 const TreeNode = require('../TreeNode.js')
 
 function genNode (val) {
-  if (val === null) return null
+  if (val === null || val === undefined) return null
   return new TreeNode(val)
 }
 
