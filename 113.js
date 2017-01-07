@@ -57,3 +57,5 @@ function dfs (root, sum, path, res) {
   dfs(root.right, sum, path, res)
   path.pop()
 }
+
+module.exports = pathSum

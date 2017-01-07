@@ -36,3 +36,5 @@ var hasPathSum = function (root, sum) {
   }
   return hasPathSum(root.left, sum) || hasPathSum(root.right, sum)
 }
+
+module.exports = hasPathSum
