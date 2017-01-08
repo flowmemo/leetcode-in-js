@@ -39,6 +39,7 @@ function buildFromArray (arr) {
 
 function convertToArray (root) {
   const res = []
+  if (!root) return res
   let curLevel = [root]
   let nextLevel = []
   let hasNonNullNode = true
@@ -54,6 +55,12 @@ function convertToArray (root) {
     }
     curLevel = nextLevel
     nextLevel = []
+  }
+  for (let i = res.length - 1; i >= 0; --i) {
+    if (res[i] !== null) {
+      res.length = i + 1
+      break
+    }
   }
   return res
 }
