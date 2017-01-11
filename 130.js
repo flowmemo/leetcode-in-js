@@ -65,13 +65,4 @@ var solve = function (board) {
   }
 }
 
-let t = [
-  'XXXX',
-  'XOOX',
-  'XXOX',
-  'XOXX'
-]
-
-t = t.map(row => Array.from(row))
-solve(t)
-console.log(t)
+module.exports = solve
