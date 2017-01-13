@@ -23,7 +23,17 @@ function convertToArray (root) {
   return res
 }
 
+function concatList (root1, root2) {
+  if (!root1) return root2
+  const head = root1
+  let node = root1
+  while (node.next) node = node.next
+  node.next = root2
+  return head
+}
+
 module.exports = {
   buildFromArray,
-  convertToArray
+  convertToArray,
+  concatList
 }
