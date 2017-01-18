@@ -13,7 +13,18 @@ const data = [
   }
 ]
 
+function sort (res) {
+  'use strict'
+  return res.sort((a, b) => {
+    return a[0] - b[0] || a[1] - b[1]
+  })
+}
+
+const options = {
+  outProcessor: sort
+}
 module.exports = {
   data,
-  checker: require('../checkers.js').normalChecker
+  checker: require('../checkers.js').normalChecker,
+  options
 }
