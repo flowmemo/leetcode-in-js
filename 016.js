@@ -13,6 +13,7 @@ Given an array S of n integers, find three integers in S such that the sum is cl
  * @return {number}
  */
 var threeSumClosest = function (nums, target) {
+  'use strict'
   const n = nums.length
   let res = nums[0] + nums[1] + nums[2]
   nums.sort((a, b) => a - b)
@@ -36,17 +37,4 @@ var threeSumClosest = function (nums, target) {
   return res
 }
 
-let tc = [
-  [[-10, 0, -2, 3, -8, 1, -10, 8, -8, 6, -7, 0, -7, 2, 2, -5, -8, 1, -4, 6],
-    18]
-]
-
-let ans = [
-  17
-]
-
-for (let i = 0; i < tc.length; ++i) {
-  let r = threeSumClosest(...tc[i])
-  let a = ans[i]
-  console.log(a === r, a, r)
-}
+module.exports = threeSumClosest
