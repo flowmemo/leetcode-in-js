@@ -17,6 +17,7 @@ Although the above answer is in lexicographical order, your answer could be in a
  * @return {string[]}
  */
 var letterCombinations = function (digits) {
+  'use strict'
   digits = Array.prototype.map.call(digits, c => +c)
   const v = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
   const res = []
@@ -27,6 +28,7 @@ var letterCombinations = function (digits) {
 }
 
 function dfs (digits, pos, path, res, v) {
+  'use strict'
   if (pos === digits.length) {
     res.push(path.join(''))
     return
@@ -44,3 +46,5 @@ function dfs (digits, pos, path, res, v) {
     path.pop()
   }
 }
+
+module.exports = letterCombinations
