@@ -17,6 +17,7 @@ A sudoku puzzle...
  * @return {void} Do not return anything, modify board in-place instead.
  */
 var solveSudoku = function (board) {
+  'use strict'
   const rows = Array(9).fill().map(() => Array(9))
   const cols = Array(9).fill().map(() => Array(9))
   const blocks = Array(9).fill().map(() => Array(9))
@@ -40,6 +41,7 @@ var solveSudoku = function (board) {
 }
 
 function dfs (pos, board, dot, rows, cols, blocks) {
+  'use strict'
   if (pos === dot.length) return true
   const [x, y] = dot[pos]
   for (let i = 0; i < 9; ++i) {
