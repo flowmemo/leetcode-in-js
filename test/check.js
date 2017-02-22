@@ -1,7 +1,9 @@
-const assert = require('assert')
+const path = require('path')
+const process = require('process')
 
 const file = process.argv[2]
-const solution = require(`../${file}`)
-const id = file.slice(0, 3)
+const filepath = path.resolve(process.cwd(), file)
+const solution = require(filepath)
+const id = path.basename(file).slice(0, 3)
 const {data, checker, options} = require(`./fixtures/${id}.js`)
 checker(solution, data, options)
