@@ -22,27 +22,33 @@ If nums = [1,2,2], a solution is:
  * @return {number[][]}
  */
 var subsetsWithDup = function (nums) {
- nums.sort((a, b) => a - b)
- cosnt res = [[]]
- for(let i = 0; i < nums.length; ++i) {
-   if (i == 0 || nums[i] != nums[i - 1]) {
-     dfs(i, nums, path, res)
-   }
- }
- return res
-};
-
-function dfs(pos, nums, path, res) {
-  if (pos == nums.length) {
-    res.push(path.slice());
-    return;
-  }
-  path.push_back(nums[pos]);
-  for (int i = pos + 1; i < nums.length; ++i) {
-    if (i == pos + 1 || nums[i] != nums[i - 1]) {
-      dfs(i, nums, path, res);
+  'use strict'
+  nums.sort((a, b) => a - b)
+  const res = [[]]
+  const path = []
+  for (let i = 0; i < nums.length; ++i) {
+    if (i === 0 || nums[i] !== nums[i - 1]) {
+      dfs(i, nums, path, res)
     }
   }
-  dfs(nums.length, nums, path, res);
-  path.pop();
+  return res
 }
+
+function dfs (pos, nums, path, res) {
+  'use strict'
+  if (pos === nums.length) {
+    res.push(path.slice())
+    return
+  }
+  path.push(nums[pos])
+  for (let i = pos + 1; i < nums.length; ++i) {
+    if (i === pos + 1 || nums[i] !== nums[i - 1]) {
+      dfs(i, nums, path, res)
+    }
+  }
+  dfs(nums.length, nums, path, res)
+  path.pop()
+}
+
+module.exports = subsetsWithDup
+
