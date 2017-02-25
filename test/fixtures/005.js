@@ -1,4 +1,5 @@
-module.exports = [
+// 5. Longest Palindromic Substring
+const data = [
   {
     input: ['babad'],
     ans: 'bab'
@@ -16,3 +17,8 @@ module.exports = [
     ans: 'a'
   }
 ]
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}

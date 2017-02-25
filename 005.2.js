@@ -21,6 +21,7 @@ Output: "bb"
  * @return {string}
  */
 var longestPalindrome = function (s) {
+  'use strict'
   const len = s.length
   let rstart = 0
   let rstep = 0
@@ -38,6 +39,7 @@ var longestPalindrome = function (s) {
 }
 
 function maxP (s, j, k) {
+  'use strict'
   const len = s.length
   while (j >= 0 && k < len) {
     if (s[j] !== s[k]) {
