@@ -18,9 +18,9 @@ fs.readdir('./solution', (err, allFiles) => {
       const errType = err.name
       if (!stat[errType]) stat[errType] = []
       stat[errType].push(file)
-      console.log(err)
     }
   }
   console.log(stat)
   console.log(fail, files.length)
+  if (fail) throw new Error()
 })
