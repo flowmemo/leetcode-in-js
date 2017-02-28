@@ -1,5 +1,5 @@
 const assert = require('assert')
-const algorithm = require('../algorithm.js')
+const algorithm = require('../../helper/algorithm.js')
 const {
   less,
   greater,
