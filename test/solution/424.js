@@ -2,7 +2,7 @@
 
 const data = [
   {
-    input: ["ABAB", 2],
+    input: ['ABAB', 2],
     ans: 4
   },
   {

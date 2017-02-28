@@ -4,8 +4,8 @@ const assert = require('assert')
 const cloneDeep = require('lodash').cloneDeep
 const util = require('util')
 
-const buildFromArray = require('../BinaryTree.js').buildFromArray
-const convertToArray = require('../BinaryTree.js').convertToArray
+const buildFromArray = require('../../helper/BinaryTree.js').buildFromArray
+const convertToArray = require('../../helper/BinaryTree.js').convertToArray
 const data = [
   {
     input: [[1, 2, 5, 3, 4, null, 6]],

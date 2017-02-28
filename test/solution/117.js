@@ -1,7 +1,7 @@
 // 117. Populating Next Right Pointers in Each Node II
 const assert = require('assert')
 const util = require('util')
-const BinaryTree = require('../BinaryTree.js')
+const BinaryTree = require('../../helper/BinaryTree.js')
 
 const data = [
   {

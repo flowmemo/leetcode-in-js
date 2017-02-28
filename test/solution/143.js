@@ -2,7 +2,7 @@
 
 const assert = require('assert')
 const util = require('util')
-const {buildFromArray, convertToArray} = require('../LinkedList.js')
+const {buildFromArray, convertToArray} = require('../../helper/LinkedList.js')
 
 const data = [
   {

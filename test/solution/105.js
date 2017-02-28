@@ -1,4 +1,4 @@
-const BinaryTree = require('../BinaryTree.js')
+const BinaryTree = require('../../helper/BinaryTree.js')
 
 const data = [
   {

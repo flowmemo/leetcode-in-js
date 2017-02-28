@@ -1,5 +1,5 @@
 // 129. Sum Root to Leaf Numbers
-const buildFromArray = require('../BinaryTree.js').buildFromArray
+const buildFromArray = require('../../helper/BinaryTree.js').buildFromArray
 const data = [
   {
     input: [[1, 2, 3]],

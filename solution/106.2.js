@@ -6,7 +6,7 @@ Note:
 You may assume that duplicates do not exist in the tree.
 */
 
-const reverse = require('./algorithm.js').reverse
+const reverse = require('../helper/algorithm.js').reverse
 const invertBinaryTree = require('./226.1.js')
 const buildTreeFromPreAndInorder = require('./105.1.js')
 

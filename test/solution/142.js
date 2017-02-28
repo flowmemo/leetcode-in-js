@@ -1,6 +1,6 @@
 // 141. Linked List Cycle
-const buildFromArray = require('../LinkedList.js').buildFromArray
-const Node = require('../../ListNode.js')
+const buildFromArray = require('../../helper/LinkedList.js').buildFromArray
+const Node = require('../../helper/ListNode.js')
 
 const data = []
 

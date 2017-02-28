@@ -1,4 +1,4 @@
-const LinkedList = require('../LinkedList.js')
+const LinkedList = require('../../helper/LinkedList.js')
 
 const data = [
   {

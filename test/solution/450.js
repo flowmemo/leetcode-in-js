@@ -1,7 +1,7 @@
 // 450. Delete Node in a BST
 
 const assert = require('assert')
-const { buildFromArray } = require('../BinaryTree.js')
+const { buildFromArray } = require('../../helper/BinaryTree.js')
 
 const data = [
   {

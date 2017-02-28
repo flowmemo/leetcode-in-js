@@ -1,5 +1,5 @@
 // 98. Validate Binary Search Tree
-const buildFromArray = require('../binaryTree.js').buildFromArray
+const buildFromArray = require('../../helper/BinaryTree.js').buildFromArray
 const data = [
   {
     input: [[1, 2, null, 3]],

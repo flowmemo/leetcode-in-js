@@ -1,7 +1,7 @@
 // 160. Intersection of Two Linked Lists
 
 const assert = require('assert')
-const { buildFromArray, concatList } = require('../LinkedList.js')
+const { buildFromArray, concatList } = require('../../helper/LinkedList.js')
 
 const data = [
   {

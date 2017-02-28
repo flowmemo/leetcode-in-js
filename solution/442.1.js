@@ -14,7 +14,7 @@ Output:
 [2,3]
 */
 
-const swap = require('./algorithm').swap
+const swap = require('../helper/algorithm.js').swap
 /**
 * @param {number[]} nums
 * @return {number[]}

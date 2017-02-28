@@ -1,4 +1,4 @@
-const buildFromArray = require('../binaryTree.js').buildFromArray
+const buildFromArray = require('../../helper/BinaryTree.js').buildFromArray
 
 const data = [
   {

@@ -13,7 +13,7 @@ Output: 7 -> 0 -> 8
  * }
  */
 
-const ListNode = require('./ListNode.js')
+const ListNode = require('../helper/ListNode.js')
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2

@@ -1,4 +1,4 @@
-const buildFromArray = require('../binaryTree.js').buildFromArray
+const buildFromArray = require('../../helper/BinaryTree.js').buildFromArray
 const data = [
   {
     input: [[3, 9, 20, null, null, 15, 7]],
