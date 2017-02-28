@@ -1,5 +1,5 @@
 'use strict'
-const ListNode = require('../ListNode.js')
+const ListNode = require('./ListNode.js')
 
 function buildFromArray (arr) {
   const dummy = new ListNode()

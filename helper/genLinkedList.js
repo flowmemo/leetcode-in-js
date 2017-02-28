@@ -1,5 +1,5 @@
 'use strict'
-const ListNode = require('../ListNode.js')
+const ListNode = require('../../helper/ListNode.js')
 function genLinkedList (arr) {
   const dummy = new ListNode()
   let cur = dummy

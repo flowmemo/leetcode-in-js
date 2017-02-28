@@ -1,4 +1,4 @@
-const TreeNode = require('../TreeNode.js')
+const TreeNode = require('./TreeNode.js')
 
 function genNode (val) {
   if (val === null || val === undefined) return null
