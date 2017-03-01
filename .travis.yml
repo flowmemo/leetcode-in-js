@@ -7,8 +7,8 @@ before_install:
   - npm config ls
 script: npm test
 after_success:
-  - npm cover
-  - './node_modules/.bin/coveralls < ./coverage/lcov.info'
+  - npm run cover
+  - ./node_modules/.bin/coveralls < ./coverage/lcov.info
   - npm install -g codeclimate-test-reporter
   - codeclimate-test-reporter < ./coverage/lcov.info
 cache:
