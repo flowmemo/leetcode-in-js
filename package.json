@@ -16,14 +16,14 @@
   },
   "scripts": {
     "test": "node test/helper/algorithm.js && node test/solutions.js",
-    "cover": "nyc npm test"
+    "cover": "nyc npm test && nyc report --reporter=lcov"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flowmemo/leetcode.git"
   },
   "author": "flowmemo",
-  "license": "MIT",
+  "license": "WTFPL",
   "bugs": {
     "url": "https://github.com/flowmemo/leetcode/issues"
   },
