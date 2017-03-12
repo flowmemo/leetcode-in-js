@@ -30,7 +30,7 @@ var maximalSquare = function (matrix) {
       if (matrix[i][j] === '1') {
         if (i > 0 && j > 0) {
           dp1[j] = Math.min(dp1[j - 1], dp0[j], dp0[j - 1]) + 1
-        }
+        } else dp1[j] = 1
         ret = Math.max(ret, dp1[j])
       } else dp1[j] = 0
     }
