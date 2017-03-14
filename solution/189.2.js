@@ -16,32 +16,30 @@ Special thanks to @Freezen for adding this problem and creating all test cases.
 */
 
 /**
- * For Bidirectional Iterator in C++
  * @param {number[]} nums
  * @param {number} k
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var rotate = function (nums, k) {
   'use strict'
-  const len = nums.length
-  k = ((k % len) + len) % len
-  reverse(nums, 0, len)
-  reverse(nums, 0, k)
-  reverse(nums, k, len)
-}
-
-/**
- * Reverses the order of the elements in the range [start, end)
- * @param {Array} arr
- * @param {number} start
- * @param {number} end
- * @return {void} reverse in-place.
- */
-function reverse (arr, start, end) {
-  'use strict'
-  for (let i = start, j = end - 1; i < j; ++i, --j) {
-    ;[arr[i], arr[j]] = [arr[j], arr[i]]
+  const n = nums.length
+  k = ((k % n) + n) % n
+  const m = gcd(k, n)
+  for (let start = 0; start < m; ++start) {
+    let pre = null
+    for (let i = 0; i <= n / m; ++i) {
+      let j = (start + i * k) % n
+      ;[pre, nums[j]] = [nums[j], pre]
+    }
   }
 }
 
+function gcd (a, b) {
+  'use strict'
+  while (b) {
+    ;[a, b] = [b, a % b]
+  }
+  return a
+}
 module.exports = rotate
+

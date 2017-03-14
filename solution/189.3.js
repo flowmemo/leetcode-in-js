@@ -16,7 +16,7 @@ Special thanks to @Freezen for adding this problem and creating all test cases.
 */
 
 /**
- * For Bidirectional Iterator in C++
+ * for Forward Iterator in C++
  * @param {number[]} nums
  * @param {number} k
  * @return {void} Do not return anything, modify nums in-place instead.
@@ -24,24 +24,25 @@ Special thanks to @Freezen for adding this problem and creating all test cases.
 var rotate = function (nums, k) {
   'use strict'
   const len = nums.length
-  k = ((k % len) + len) % len
-  reverse(nums, 0, len)
-  reverse(nums, 0, k)
-  reverse(nums, k, len)
-}
-
-/**
- * Reverses the order of the elements in the range [start, end)
- * @param {Array} arr
- * @param {number} start
- * @param {number} end
- * @return {void} reverse in-place.
- */
-function reverse (arr, start, end) {
-  'use strict'
-  for (let i = start, j = end - 1; i < j; ++i, --j) {
-    ;[arr[i], arr[j]] = [arr[j], arr[i]]
+  k = (k % len + len) % len
+  const m = (len - k) % len
+  let nFirst = m
+  let i = 0
+  let j = nFirst
+  while (i !== j) {
+    swap(nums, i++, j++)
+    if (j === len) {
+      j = nFirst
+    } else if (i === nFirst) nFirst = j
   }
 }
 
+function swap (nums, i, j) {
+  'use strict'
+  const temp = nums[i]
+  nums[i] = nums[j]
+  nums[j] = temp
+}
+
 module.exports = rotate
+
