@@ -31,6 +31,7 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you canâ
  * @return {TreeNode}
  */
 var invertTree = function (root) {
+  'use strict'
   if (!root) return root
   const tmp = root.left
   root.left = root.right
