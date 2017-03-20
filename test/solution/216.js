@@ -29,7 +29,7 @@ module.exports = {
   options
 }
 
-function sort2dArray(subsets) {
+function sort2dArray (subsets) {
   'use strict'
   for (let set of subsets) {
     set.sort((a, b) => a - b)

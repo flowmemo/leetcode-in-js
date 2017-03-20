@@ -47,4 +47,3 @@ module.exports = {
   checker,
   options
 }
-
