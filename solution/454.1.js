@@ -33,7 +33,7 @@ var fourSumCount = function (A, B, C, D) {
   const map = Object.create(null)
   for (const c1 of C) {
     for (const c2 of D) {
-      ++map[c1 + c2]
+      map[c1 + c2] = (map[c1 + c2] || 0) + 1
     }
   }
 
