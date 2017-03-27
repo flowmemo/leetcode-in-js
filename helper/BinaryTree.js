@@ -67,5 +67,7 @@ function convertToArray (root) {
 
 module.exports = {
   buildFromArray,
-  convertToArray
+  convertToArray,
+  serialize,
+  deserialize
 }
