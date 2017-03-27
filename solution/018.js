@@ -19,42 +19,43 @@ A solution set is:
  * @param {number} target
  * @return {number[][]}
  */
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[][]}
+ */
 var fourSum = function (nums, target) {
+  'use strict'
   nums.sort((a, b) => a - b)
-  const res = []
   const n = nums.length
-  for (let i = 0; i < n - 3; ++i) {
-    let n1 = nums[i]
-    if (4 * n1 > target) break
-    if (i > 0 && n1 === nums[i - 1]) continue
-    if (n1 + 3 * nums[n - 1] < target) continue
-    for (let j = i + 1; j < n - 2; ++j) {
-      let n2 = nums[j]
-      if (n1 + 3 * n2 > target) break
-      if (j > i + 1 && n2 === nums[j - 1]) continue
-      if (n1 + n2 + 2 * nums[n - 1] < target) continue
+  const ret = []
+  for (let i = 0; i < n; ++i) {
+    if (i === 0 || nums[i] !== nums[i - 1]) {
+      for (let j = i + 1; j < n; ++j) {
+        if (j === i + 1 || nums[j] !== nums[j - 1]) {
+          const c = nums[i] + nums[j]
+          const nc = target - c
 
-      // 2sum
-      let l = j + 1
-      let r = n - 1
-      let rest = target - n1 - n2
-      while (l < r) {
-        let sum2 = nums[l] + nums[r]
-        if (sum2 < rest) {
-          ++l
-        } else if (sum2 > rest) {
-          --r
-        } else {
-          res.push([n1, n2, nums[l], nums[r]])
-          ++l
-          --r
+          // two sum
+          let k = j + 1
+          let l = n - 1
+          while (k < l) {
+            if (k > j + 1 && nums[k] === nums[k - 1]) k++
+            else if (l < n - 1 && nums[l] === nums[l + 1]) l--
+            else if (nums[k] + nums[l] > nc) --l
+            else if (nums[k] + nums[l] < nc) ++k
+            else {
+              ret.push([nums[i], nums[j], nums[k], nums[l]])
+              ++k
+              --l
+            }
+          }
         }
-
-        // avoid duplicated
-        while (l > j + 1 && l < r && nums[l] === nums[l - 1]) ++l
-        while (r < n - 1 && l < r && nums[r] === nums[r + 1]) --r
       }
     }
   }
-  return res
+
+  return ret
 }
+
+module.exports = fourSum
