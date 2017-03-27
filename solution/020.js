@@ -10,6 +10,7 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
  * @return {boolean}
  */
 var isValid = function (s) {
+  'use strict'
   const stk = []
   const m = {
     '(': ')',
@@ -26,3 +27,5 @@ var isValid = function (s) {
   }
   return !stk.length
 }
+
+module.exports = isValid
