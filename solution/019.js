@@ -26,6 +26,7 @@ Try to do this in one pass.
  * @return {ListNode}
  */
 var removeNthFromEnd = function (head, n) {
+  'use strict'
   const dummy = {}
   dummy.next = head
   let cur = head
@@ -38,3 +39,5 @@ var removeNthFromEnd = function (head, n) {
   pre.next = pre.next.next
   return dummy.next
 }
+
+module.exports = removeNthFromEnd
