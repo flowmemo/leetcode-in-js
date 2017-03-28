@@ -16,6 +16,7 @@ Merge two sorted linked lists and return it as a new list. The new list should b
  * @return {ListNode}
  */
 var mergeTwoLists = function (l1, l2) {
+  'use strict'
   const dummy = {next: null}
   let pre = dummy
   while (l1 && l2) {
@@ -33,3 +34,5 @@ var mergeTwoLists = function (l1, l2) {
   else pre.next = l1
   return dummy.next
 }
+
+module.exports = mergeTwoLists
