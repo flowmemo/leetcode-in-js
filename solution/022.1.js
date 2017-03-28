@@ -18,14 +18,15 @@ For example, given n = 3, a solution set is:
  * @return {string[]}
  */
 var generateParenthesis = function (n) {
+  'use strict'
   const res = []
-  if (!n) return res
   const path = []
   dfs(0, 0, 2 * n, path, res)
   return res
 }
 
 function dfs (i, count, len, path, res) {
+  'use strict'
   if (len === path.length) {
     res.push(path.join(''))
     return

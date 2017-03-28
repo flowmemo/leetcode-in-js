@@ -18,6 +18,7 @@ For example, given n = 3, a solution set is:
  * @return {string[]}
  */
 var generateParenthesis = function (n) {
+  'use strict'
   // https://discuss.leetcode.com/post/5159
   const rmap = Array(n + 1).fill().map(() => [])
   rmap[0] = ['']
