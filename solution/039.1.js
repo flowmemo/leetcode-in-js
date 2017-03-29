@@ -21,6 +21,7 @@ A solution set is:
 * @return {number[][]}
 */
 var combinationSum = function (candidates, target) {
+  'use strict'
   candidates.sort((a, b) => a - b)
   const res = []
   const path = []
@@ -29,7 +30,9 @@ var combinationSum = function (candidates, target) {
   }
   return res
 }
+
 function dfs (pos, v, rest, path, res) {
+  'use strict'
   rest -= v[pos]
   if (rest < 0) return
   path.push(v[pos])
@@ -41,4 +44,3 @@ function dfs (pos, v, rest, path, res) {
 }
 
 module.exports = combinationSum
-
