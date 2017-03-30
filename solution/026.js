@@ -15,6 +15,7 @@ Your function should return length = 2, with the first two elements of nums bein
  * @return {number}
  */
 var removeDuplicates = function (nums) {
+  'use strict'
   const len = nums.length
   if (len <= 1) return len
 
@@ -27,24 +28,4 @@ var removeDuplicates = function (nums) {
   return i
 }
 
-let tc = [
-  [1, 1, 2],
-  [],
-  [1],
-  [1, 1, 2, 2],
-  [1, 2, 2]
-]
-
-let ans = [
-  [1, 2],
-  [],
-  [1],
-  [1, 2],
-  [1, 2]
-]
-
-for (let i = 0; i < tc.length; ++i) {
-  let r = tc[i].slice(0, removeDuplicates(tc[i])).join()
-  let a = ans[i].join()
-  console.log(a === r, a, r)
-}
+module.exports = removeDuplicates
