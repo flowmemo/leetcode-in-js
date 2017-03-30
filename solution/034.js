@@ -17,6 +17,7 @@ return [3, 4].
  * @return {number[]}
  */
 var searchRange = function (nums, target) {
+  'use strict'
   const n = nums.length
   let left = 0
   let right = n
