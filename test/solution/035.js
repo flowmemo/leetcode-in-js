@@ -1,4 +1,6 @@
-module.exports = [
+// 35. Search Insert Position
+
+const data = [
   {
     input: [[1, 3, 5, 6], 5],
     ans: 2
@@ -16,3 +18,9 @@ module.exports = [
     ans: 0
   }
 ]
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}
+

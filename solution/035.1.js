@@ -11,7 +11,6 @@ Here are few examples.
 [1,3,5,6], 0 → 0
 */
 
-const lowerBound = require('../helper/algorithm.js').lowerBound
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -19,8 +18,15 @@ const lowerBound = require('../helper/algorithm.js').lowerBound
  */
 var searchInsert = function (nums, target) {
   'use strict'
-  return lowerBound(nums, 0, nums.length, target)
+  const n = nums.length
+  let l = 0
+  let r = n
+  while (l < r) {
+    let mid = ((l + r) >> 1)
+    if (nums[mid] >= target) r = mid
+    else l = mid + 1
+  }
+  return l
 }
 
 module.exports = searchInsert
-
