@@ -1,4 +1,6 @@
-module.exports = [
+// 32. Longest Valid Parentheses
+
+const data = [
   {
     input: ['(()'],
     ans: 2
@@ -20,3 +22,9 @@ module.exports = [
     ans: 2
   }
 ]
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}
+

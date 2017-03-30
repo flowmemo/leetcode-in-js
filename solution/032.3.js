@@ -12,21 +12,27 @@ Another example is ")()())", where the longest valid parentheses substring is "(
  * @return {number}
  */
 var longestValidParentheses = function (s) {
-  const len = s.length
-  const dp = Array(len + 1).fill(0)
+  'use strict'
+
+  const stk = []
   let res = 0
-  for (let i = 2; i <= len; ++i) {
-    if (s[i - 1] === ')') {
-      if (s[i - 2] === '(') dp[i] = dp[i - 2] + 2
-      else {
-        const ci = i - dp[i - 1] - 2
-        dp[i] = s[ci] === '('
-                ? dp[i - 1] + dp[ci] + 2
-                : 0
+  let prel = 0 // length of longest valid paren ends in i
+  for (let i = 0; i < s.length; ++i) {
+    const c = s[i]
+    if (c === '(') {
+      stk.push(i - prel)
+      prel = 0
+    } else {
+      if (stk.length) {
+        const ci = stk.pop()
+        prel = i + 1 - ci
+        res = Math.max(res, prel)
+      } else {
+        prel = 0
       }
-      res = Math.max(res, dp[i])
     }
   }
+
   return res
 }
 

@@ -12,22 +12,39 @@ Another example is ")()())", where the longest valid parentheses substring is "(
  * @return {number}
  */
 var longestValidParentheses = function (s) {
-  // https://leetcode.com/articles/longest-valid-parentheses/
-  const stk = [ -1 ]
+  'use strict'
+  const n = s.length
+  let start = 0
+  let i = 0
+  let ccount = 0
   let res = 0
-  for (let i = 0; i < s.length; ++i) {
-    if (s[i] === '(') stk.push(i)
-    else {
-      stk.pop()
-      if (stk.length) {
-        // what is the top element now ?
-        // (the start index of longest valid paren so far) - 1
-        res = Math.max(res, i - stk[stk.length - 1])
-      } else {
-        stk.push(i)
-      }
+  while (i < n) {
+    if (s[i] === ')') ccount--
+    else ccount++
+
+    if (ccount === 0) res = Math.max(res, i + 1 - start)
+    else if (ccount < 0) {
+      ccount = 0
+      start = i + 1
     }
+    ++i
   }
+
+  ccount = 0
+  start = n
+  i = n - 1
+  while (i >= 0) {
+    if (s[i] === '(') ccount--
+    else ccount++
+
+    if (ccount === 0) res = Math.max(res, start - i)
+    else if (ccount < 0) {
+      ccount = 0
+      start = i
+    }
+    --i
+  }
+
   return res
 }
 
