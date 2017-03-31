@@ -19,12 +19,14 @@ For example,
  * @return {number[][]}
  */
 var permute = function (nums) {
+  'use strict'
   const res = []
   dfs(0, nums, res)
   return res
 }
 
 function dfs (pos, path, res) {
+  'use strict'
   if (pos + 1 === path.length) {
     res.push(path.slice())
     return
@@ -37,6 +39,7 @@ function dfs (pos, path, res) {
 }
 
 function swap (arr, i, j) {
+  'use strict'
   const tmp = arr[i]
   arr[i] = arr[j]
   arr[j] = tmp
