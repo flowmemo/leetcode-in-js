@@ -15,6 +15,7 @@ You may assume no duplicate exists in the array.
  * @return {number}
  */
 var search = function (nums, target) {
+  'use strict'
   // find ind
   // nums[ind - 1] > nums[ind] || ind == 0
   const n = nums.length
