@@ -7,6 +7,10 @@ const data = [
   {
     input: [[1, 2, 13, 14, 5, 6]],
     ans: 18
+  },
+  {
+    input: [Array(15000).fill().map((_, i) => i + 1)],
+    ans: 56250000
   }
 ]
 
