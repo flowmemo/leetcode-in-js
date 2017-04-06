@@ -16,15 +16,10 @@ var maxArea = function (height) {
   let j = len - 1
   let res = 0
   while (i < j) {
-    if (i > 0 && height[i - 1] >= height[i]) {
-      ++i
-    } else if (j < len - 1 && height[j] <= height[j + 1]) {
-      --j
-    } else {
-      res = Math.max(Math.min(height[i], height[j]) * (j - i), res)
-      if (height[i] < height[j]) ++i
-      else --j
-    }
+    const current = Math.min(height[i], height[j]) * (j - i)
+    res = Math.max(current, res)
+    if (height[i] < height[j]) ++i
+    else --j
   }
   return res
 }
