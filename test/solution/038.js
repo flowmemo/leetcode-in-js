@@ -1,4 +1,6 @@
-module.exports = [
+// 38. Count and Say
+
+const data = [
   {
     input: [1],
     ans: '1'
@@ -8,3 +10,8 @@ module.exports = [
     ans: '13211311123113112211'
   }
 ]
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}
