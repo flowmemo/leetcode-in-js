@@ -1,21 +1,25 @@
 const TreeNode = require('./TreeNode.js')
 
 function genNode (val) {
+  'use strict'
   if (val === null || val === undefined) return null
   return new TreeNode(val)
 }
 
 function serialize (root) {
+  'use strict'
   const res = convertToArray(root)
   return JSON.stringify(res)
 }
 
 function deserialize (data) {
+  'use strict'
   const arr = JSON.parse(data)
   return buildFromArray(arr)
 }
 
 function buildFromArray (arr) {
+  'use strict'
   const len = arr.length
   if (!len) return null
   let index = 0
@@ -38,6 +42,7 @@ function buildFromArray (arr) {
 }
 
 function convertToArray (root) {
+  'use strict'
   const res = []
   if (!root) return res
   let curLevel = [root]

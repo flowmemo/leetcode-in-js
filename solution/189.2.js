@@ -42,4 +42,3 @@ function gcd (a, b) {
   return a
 }
 module.exports = rotate
-
