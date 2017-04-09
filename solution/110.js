@@ -32,4 +32,3 @@ function getDepth (root) {
 }
 
 module.exports = isBalanced
-

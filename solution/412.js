@@ -47,4 +47,3 @@ var fizzBuzz = function (n) {
 }
 
 module.exports = fizzBuzz
-

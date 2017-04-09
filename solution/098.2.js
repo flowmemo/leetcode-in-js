@@ -50,4 +50,3 @@ function inorder (root, prenode) {
 }
 
 module.exports = isValidBST
-

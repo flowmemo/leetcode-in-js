@@ -27,4 +27,3 @@ module.exports = {
   data,
   checker: require('../checkers.js').normalChecker
 }
-

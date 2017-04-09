@@ -31,7 +31,7 @@ var inorderTraversal = function (root) {
   const stk = []
   stk.push([root, 2])
   let len
-  while (len = stk.length) {
+  while ((len = stk.length)) {
     const pair = stk[len - 1]
     const node = pair[0]
     if (pair[1] === 2) {

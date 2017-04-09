@@ -45,4 +45,3 @@ function swap (nums, i, j) {
 }
 
 module.exports = rotate
-

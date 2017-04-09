@@ -61,4 +61,3 @@ var frequencySort = function (s) {
 }
 
 module.exports = frequencySort
-

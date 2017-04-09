@@ -30,7 +30,7 @@ var isHappy = function (n) {
   return n === 1
 }
 
-function trans(n) {
+function trans (n) {
   'use strict'
   let r = 0
   while (n) {

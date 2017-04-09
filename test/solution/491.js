@@ -11,7 +11,6 @@ const data = [
   }
 ]
 
-
 for (const { ans } of data) {
   ans.sort()
 }

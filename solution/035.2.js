@@ -23,4 +23,3 @@ var searchInsert = function (nums, target) {
 }
 
 module.exports = searchInsert
-

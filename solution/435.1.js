@@ -56,4 +56,3 @@ var eraseOverlapIntervals = function (intervals) {
 }
 
 module.exports = eraseOverlapIntervals
-

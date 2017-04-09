@@ -21,7 +21,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
  *     this.left = this.right = null;
  * }
  */
-/**
+/** Morris traversal
  * @param {TreeNode} root
  * @return {number[]}
  */
@@ -35,7 +35,7 @@ var inorderTraversal = function (root) {
       cur = cur.right
     } else {
       prev = cur.left
-      while (prev.right && prev.right != cur) prev = prev.right
+      while (prev.right && prev.right !== cur) prev = prev.right
 
       if (prev.right == null) {
         prev.right = cur
