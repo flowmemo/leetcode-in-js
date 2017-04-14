@@ -27,7 +27,10 @@ var wordBreak = function (s, wordDict) {
     for (const w of wordDict) {
       const wl = w.length
       if (i - wl >= 0 && dp[i - wl]) {
-        if (check(s, i - wl, w)) dp[i] = true
+        if (check(s, i - wl, w)) {
+          dp[i] = true
+          break
+        }
       }
     }
   }
