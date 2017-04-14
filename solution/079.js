@@ -23,6 +23,7 @@ word = "ABCB", -> returns false.
  * @return {boolean}
  */
 var exist = function (board, word) {
+  'use strict'
   const m = board.length
   if (!m) return false
   const n = board[0].length
@@ -35,18 +36,24 @@ var exist = function (board, word) {
   }
   return false
 }
+
 function dfs (x, y, w, pos, board, visited, m, n) {
+  'use strict'
+  if (pos === w.length) return true
+  if (x < 0 || x >= m || y < 0 || y >= n) return false
+  if (board[x][y] !== w[pos]) return false
   if (visited[x][y]) return false
-  if (board[x][y] != w[pos]) return false
   visited[x][y] = true
   ++pos
-  if (pos == w.length) return true
-  if (x > 0) if (dfs(x - 1, y, w, pos, board, visited, m, n)) return true
-  if (x < m - 1) if (dfs(x + 1, y, w, pos, board, visited, m, n)) return true
-  if (y > 0) if (dfs(x, y - 1, w, pos, board, visited, m, n)) return true
-  if (y < n - 1) if (dfs(x, y + 1, w, pos, board, visited, m, n)) return true
+  let r = (
+    dfs(x + 1, y, w, pos, board, visited, m, n) ||
+    dfs(x - 1, y, w, pos, board, visited, m, n) ||
+    dfs(x, y + 1, w, pos, board, visited, m, n) ||
+    dfs(x, y - 1, w, pos, board, visited, m, n)
+  )
+
   visited[x][y] = false
-  return false
+  return r
 }
 
 module.exports = exist
