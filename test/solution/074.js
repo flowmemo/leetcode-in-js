@@ -1,4 +1,6 @@
-module.exports = [
+// 74. Search a 2D Matrix
+
+const data = [
   {
     input: [
       [
@@ -22,3 +24,8 @@ module.exports = [
     ans: false
   }
 ]
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}

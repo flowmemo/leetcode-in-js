@@ -35,8 +35,9 @@ Given target = 3, return true.
  * @param {number} target
  * @return {boolean}
  */
-const {upperBound, lowerBound, binarySearch} = require('./algorithm.js')
 var searchMatrix = function (matrix, target) {
+  'use strict'
+  const {upperBound, binarySearch} = require('../helper/algorithm.js')
   const row = upperBound(matrix, 0, matrix.length, [target], (a, b) => a[0] < b[0])
   if (!row) return false
   const arr = matrix[row - 1]
@@ -44,4 +45,3 @@ var searchMatrix = function (matrix, target) {
 }
 
 module.exports = searchMatrix
-
