@@ -1,4 +1,6 @@
-module.exports = [
+// 36. Valid Sudoku
+
+const data = [
   {
     input: [
       ['.87654321',
@@ -9,7 +11,7 @@ module.exports = [
         '6........',
         '7........',
         '8........',
-        '9........'].map(line => Array.from(line))
+        '9........']
     ],
     ans: true
   },
@@ -23,8 +25,21 @@ module.exports = [
         '6........',
         '7........',
         '8........',
-        '2........'].map(line => Array.from(line))
+        '2........']
     ],
     ans: false
   }
 ]
+
+const options = {
+  inProcessor: input => {
+    input[0] = input[0].map(line => line.split(''))
+    return input
+  }
+}
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker,
+  options
+}
