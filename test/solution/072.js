@@ -1,4 +1,6 @@
-module.exports = [
+// 72. Edit Distance
+
+const data = [
   {
     input: ['a', 'bbb'],
     ans: 3
@@ -8,3 +10,8 @@ module.exports = [
     ans: 0
   }
 ]
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}
