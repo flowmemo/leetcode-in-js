@@ -22,30 +22,38 @@ A solution set is:
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum2 = function (candidates, target) {
-  candidates.sort((a, b) => a - b)
-  const res = []
+var combinationSum2 = function (v, target) {
+  'use strict'
+  v.sort((a, b) => b - a)
+  const ret = []
   const path = []
-  for (let i = 0; i < candidates.length; ++i) {
-    if (i === 0 || candidates[i] !== candidates[i - 1]) {
-      dfs(i, candidates, target, path, res)
+  for (let i = 0; i < v.length; ++i) {
+    if (i === 0 || v[i] !== v[i - 1]) {
+      dfs(i, path, target, v, ret)
     }
   }
-  return res
+  return ret
 }
 
-function dfs (pos, v, rest, path, res) {
-  rest -= v[pos]
+function dfs (p, path, rest, v, ret) {
+  'use strict'
+  if (p === v.length) {
+    if (rest === 0) ret.push(path.slice())
+    return
+  }
+
+  rest -= v[p]
   if (rest < 0) return
-  path.push(v[pos])
-  if (rest === 0) res.push(path.slice())
-  for (let i = pos + 1; i < v.length; ++i) {
-    if (i === pos + 1 || v[i] !== v[i - 1]) {
-      dfs(i, v, rest, path, res)
+  path.push(v[p])
+
+  for (let i = p + 1; i < v.length; ++i) {
+    if (i === p + 1 || v[i] !== v[i - 1]) {
+      dfs(i, path, rest, v, ret)
     }
   }
+
+  dfs(v.length, path, rest, v, ret)
   path.pop()
 }
 
 module.exports = combinationSum2
-
