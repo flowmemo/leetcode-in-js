@@ -1,13 +1,21 @@
-'use strict'
+// 70. Climbing Stairs
+
 const phi = (1 + Math.sqrt(5)) / 2
 function fibonacci (n) {
-  return Math.pow(phi, n) / Math.sqrt(5) + 1 / 2 | 0
+  'use strict'
+  return 1E-5 + Math.pow(phi, n) / Math.sqrt(5) + 1 / 2 | 0
 }
 
-module.exports = []
+const data = []
+
 for (let i = 1; i < 10; ++i) {
-  module.exports.push({
+  data.push({
     input: [i],
     ans: fibonacci(i + 1)
   })
+}
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
 }

@@ -10,11 +10,13 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
  * @return {number}
  */
 var climbStairs = function (n) {
+  'use strict'
   let p1 = 0
   let p2 = 1
   let i = 0
-  while (i++ < n) {
+  while (i < n) {
     ;[p1, p2] = [p2, p1 + p2]
+    i++
   }
   return p2
 }
