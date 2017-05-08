@@ -18,6 +18,7 @@ There are many calls to sumRange function.
  * @param {number[]} nums
  */
 var NumArray = function (nums) {
+  'use strict'
   const len = nums.length
   const sum = Array(len + 1)
   sum[0] = 0
@@ -33,6 +34,7 @@ var NumArray = function (nums) {
  * @return {number}
  */
 NumArray.prototype.sumRange = function (i, j) {
+  'use strict'
   return this.sum[j + 1] - this.sum[i]
 }
 
@@ -43,11 +45,4 @@ NumArray.prototype.sumRange = function (i, j) {
  * numArray.sumRange(0, 2);
  */
 
-let tc = [0, 1, 2, 3, 4, 5]
-let numArray = new NumArray(tc)
-for (let i = 0; i < tc.length; i++) {
-  let a = (0 + i) * (i + 1) / 2
-  let r = numArray.sumRange(0, i)
-  console.log(a === r, a, r)
-}
-
+module.exports = NumArray
