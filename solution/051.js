@@ -23,32 +23,35 @@ There exist two distinct solutions to the 4-queens puzzle:
   ".Q.."]
 ]
 */
+
 /**
  * @param {number} n
  * @return {string[][]}
  */
 var solveNQueens = function (n) {
+  'use strict'
   const cols = Array(n)
   const diags = Array(2 * n - 1)
   const rdiags = Array(2 * n - 1)
   const line = Array(n)
   line.fill('.')
   const grid = Array(n).fill(line).map(() => line.slice())
-  const res = []
-  dfs(0, cols, diags, rdiags, grid, res, n)
-  return res
+  const ret = []
+  dfs(0, cols, diags, rdiags, grid, ret, n)
+  return ret
 }
 
-function dfs (row, cols, diags, rdiags, grid, res, n) {
+function dfs (row, cols, diags, rdiags, grid, ret, n) {
+  'use strict'
   if (row === n) {
-    res.push_back(grid.map(line => line.join('')))
+    ret.push(grid.map(line => line.join('')))
     return
   }
   for (let i = 0; i < n; ++i) {
     if (!cols[i] && !diags[row - i + n - 1] && !rdiags[row + i]) {
       cols[i] = diags[row - i + n - 1] = rdiags[row + i] = true
       grid[row][i] = 'Q'
-      dfs(row + 1, cols, diags, rdiags, grid, res, n)
+      dfs(row + 1, cols, diags, rdiags, grid, ret, n)
       grid[row][i] = '.'
       cols[i] = diags[row - i + n - 1] = rdiags[row + i] = false
     }
