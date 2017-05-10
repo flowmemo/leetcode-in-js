@@ -20,19 +20,17 @@ You can assume that you can always reach the last index.
  * @return {number}
  */
 var jump = function (nums) {
+  'use strict'
   let target = nums.length - 1
-  let res = 0
-  let left = 0
   let right = 0
   let nright = right
-  while (right < target) {
-      // [left, right] can be reached in `res` steps.
-    for (let i = left; i <= right; ++i) {
-      nright = Math.max(nright, nums[i] + i)
+  let res = 0
+  for (let i = 0; i < target; ++i) {
+    nright = Math.max(nright, nums[i] + i)
+    if (i === right) {
+      ++res
+      right = nright
     }
-    left = right + 1
-    right = nright
-    ++res
   }
   return res
 }
