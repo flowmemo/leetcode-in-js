@@ -17,6 +17,7 @@ A = [3,2,1,0,4], return false.
  * @return {boolean}
  */
 var canJump = function (nums) {
+  'use strict'
   const n = nums.length
   let i = 0
   let rmax = 0

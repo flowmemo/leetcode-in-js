@@ -1,4 +1,6 @@
-module.exports = [
+// 55. Jump Game
+
+const data = [
   {
     input: [[2, 3, 1, 1, 4]],
     ans: true
@@ -8,3 +10,9 @@ module.exports = [
     ans: false
   }
 ]
+
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}
