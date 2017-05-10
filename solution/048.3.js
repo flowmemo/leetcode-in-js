@@ -9,11 +9,11 @@ Could you do this in-place?
 */
 
 /**
- * in-place
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var rotate = function (matrix) {
+  'use strict'
   const n = matrix.length
   reverse(matrix, 0, n)
 
@@ -27,6 +27,7 @@ var rotate = function (matrix) {
 }
 
 function reverse (arr, first, last) {
+  'use strict'
   let right = last - 1
   while (first < right) {
     const tmp = arr[first]
