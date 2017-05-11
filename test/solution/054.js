@@ -1,4 +1,6 @@
-module.exports = [
+// 54. Spiral Matrix
+
+const data = [
   {
     input: [
       [
@@ -24,3 +26,8 @@ module.exports = [
     ans: [1, 2, 3]
   }
 ]
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}

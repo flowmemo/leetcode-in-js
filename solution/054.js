@@ -18,6 +18,7 @@ You should return [1,2,3,6,9,8,7,4,5].
  * @return {number[]}
  */
 var spiralOrder = function (matrix) {
+  'use strict'
   const m = matrix.length
   if (!m) return []
   const n = matrix[0].length
