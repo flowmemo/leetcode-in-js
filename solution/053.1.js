@@ -15,6 +15,7 @@ If you have figured out the O(n) solution, try coding another solution using the
  * @return {number}
  */
 var maxSubArray = function (nums) {
+  'use strict'
   const n = nums.length
   let pre = nums[0]
   let res = pre

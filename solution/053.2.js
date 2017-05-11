@@ -15,10 +15,12 @@ If you have figured out the O(n) solution, try coding another solution using the
 * @return {number}
 */
 var maxSubArray = function (nums) {
+  'use strict'
   return helper(nums, 0, nums.length)
 }
 
 function helper (nums, start, end) {
+  'use strict'
   if (start === end) return nums[0]
   if (start + 1 === end) return nums[start]
   let mid = start + (end - start) / 2 | 0
