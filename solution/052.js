@@ -12,17 +12,19 @@ Now, instead outputting board configurations, return the total number of distinc
  * @return {number}
  */
 var totalNQueens = function (n) {
+  'use strict'
   const cols = Array(n)
   const diags = Array(2 * n - 1)
   const rdiags = Array(2 * n - 1)
-  const o = {res: 0}
+  const o = {ret: 0}
   dfs(0, cols, diags, rdiags, o, n)
-  return o.res
+  return o.ret
 }
 
 function dfs (row, cols, diags, rdiags, o, n) {
+  'use strict'
   if (row === n) {
-    ++o.res
+    ++o.ret
     return
   }
   for (let i = 0; i < n; ++i) {
