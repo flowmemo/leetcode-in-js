@@ -26,8 +26,9 @@ This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
  * @return {Interval[]}
  */
 var insert = function (intervals, newInterval) {
+  'use strict'
   const merge = require('./056.js')
-  const upperBound = require('./algorithm.js').upperBound
+  const upperBound = require('../helper/algorithm.js').upperBound
   let pos = upperBound(intervals, 0, intervals.length, newInterval, (a, b) => a.start - b.start)
   intervals.splice(pos, 0, newInterval)
   return merge(intervals)
