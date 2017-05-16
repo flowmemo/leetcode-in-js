@@ -19,6 +19,7 @@ return [1,6],[8,10],[15,18].
  * @return {Interval[]}
  */
 var merge = function (intervals) {
+  'use strict'
   const n = intervals.length
   if (!n) return []
   intervals.sort((a, b) => a.start - b.start)
