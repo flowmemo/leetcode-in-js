@@ -24,6 +24,7 @@ If nums = [1,2,3], a solution is:
 * @return {number[][]}
 */
 var subsets = function (nums) {
+  'use strict'
   let bit = (1 << nums.length) - 1
   const res = []
   while (bit >= 0) {

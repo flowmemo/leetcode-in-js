@@ -24,25 +24,26 @@ If nums = [1,2,3], a solution is:
  * @return {number[][]}
  */
 var subsets = function (nums) {
-  const res = []
+  'use strict'
+  const ret = []
   const path = []
   for (let i = 0; i <= nums.length; ++i) {
-    dfs(i, nums, path, res)
+    dfs(i, nums, path, ret)
   }
-  return res
+  return ret
 }
 
-function dfs (pos, nums, path, res) {
+function dfs (pos, nums, path, ret) {
+  'use strict'
   if (pos === nums.length) {
-    res.push(path.slice())
+    ret.push(path.slice())
     return
   }
   path.push(nums[pos])
   for (let i = pos + 1; i <= nums.length; ++i) {
-    dfs(i, nums, path, res)
+    dfs(i, nums, path, ret)
   }
   path.pop()
 }
 
 module.exports = subsets
-
