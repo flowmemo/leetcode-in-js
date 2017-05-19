@@ -14,21 +14,23 @@ First, iterate the array counting number of 0's, 1's, and 2's, then overwrite ar
 Could you come up with an one-pass algorithm using only constant space?
 */
 
-/** counting sort
+/** dutch flag sort
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var sortColors = function (nums) {
-  const count = Array(3).fill(0)
-  for (let n of nums) {
-    count[n]++
-  }
-  let ci = 0
+  'use strict'
+  const swap = require('../helper/algorithm.js').swap
+  let left = 0
+  let right = nums.length
   let i = 0
-  while (i < nums.length) {
-    if (count[ci]) {
-      nums[i++] = ci
-      count[ci]--
-    } else ci++
+  while (i < right) {
+    if (nums[i] < 1) {
+      swap(nums, i++, left++)
+    } else if (nums[i] > 1) {
+      swap(nums, i, --right)
+    } else ++i
   }
 }
+
+module.exports = sortColors
