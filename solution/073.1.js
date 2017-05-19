@@ -14,15 +14,19 @@ Could you devise a constant space solution?
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var setZeroes = function (matrix) {
+  'use strict'
   const g = matrix
   const m = matrix.length
+  if (!m) return
   const n = matrix[0].length
-  let col0 = 1
+  if (!n) return
 
-  for (let i = 0; i < m; ++i) { if (!g[i][0]) col0 = 0 }
-  for (let j = 0; j < n; ++j) {
-    if (!g[i][j]) {
-      g[i][0] = g[0][j] = 0
+  let frow = 1
+  for (let j = 0; j < n; ++j) if (!g[0][j]) frow = 0
+
+  for (let i = 1; i < m; ++i) {
+    for (let j = 0; j < n; ++j) {
+      if (!g[i][j]) g[i][0] = g[0][j] = 0
     }
   }
 
@@ -31,5 +35,10 @@ var setZeroes = function (matrix) {
       if (!g[i][0] || !g[0][j]) g[i][j] = 0
     }
   }
-  if (!col0) for (let j = 0; j < n; ++j) g[0][j] = 0
+
+  if (frow === 0) {
+    for (let j = 0; j < n; ++j) g[0][j] = 0
+  }
 }
+
+module.exports = setZeroes
