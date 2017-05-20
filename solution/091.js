@@ -19,20 +19,22 @@ The number of ways decoding "12" is 2.
  * @return {number}
  */
 var numDecodings = function (s) {
-  if (!s) return 0
+  'use strict'
+  const n = s.length
+  if (!n) return 0
   const valid = new Set()
   for (let i = 1; i <= 26; ++i) {
     valid.add('' + i)
   }
 
-  const dp = Array(s.length + 1).fill(0)
+  const dp = Array(n + 1).fill(0)
   dp[0] = 1
   if (valid.has(s.slice(0, 1))) dp[1] = 1
   for (let i = 2; i <= s.length; ++i) {
     if (valid.has(s.slice(i - 1, i))) dp[i] += dp[i - 1]
     if (valid.has(s.slice(i - 2, i))) dp[i] += dp[i - 2]
   }
-  return dp[s.length]
+  return dp[n]
 }
 
 module.exports = numDecodings

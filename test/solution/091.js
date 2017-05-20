@@ -1,4 +1,6 @@
-module.exports = [
+// 91. Decode Ways
+
+const data = [
   {
     input: ['12'],
     ans: 2
@@ -8,3 +10,9 @@ module.exports = [
     ans: 1
   }
 ]
+
+const checker = require('../checkers.js').normalChecker
+module.exports = {
+  data,
+  checker
+}
