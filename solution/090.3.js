@@ -23,31 +23,31 @@ If nums = [1,2,2], a solution is:
  */
 var subsetsWithDup = function (nums) {
   'use strict'
+  Array.prototype.back = function () {
+    return this[this.length - 1]
+  }
   nums.sort((a, b) => a - b)
+  const n = nums.length
   const ret = [[]]
-  const path = []
-  for (let i = 0; i < nums.length; ++i) {
-    if (i === 0 || nums[i] !== nums[i - 1]) {
-      dfs(i, nums, path, ret)
+  let nstart = 0
+  let nend = 1
+  for (let i = 0; i < n; ++i) {
+    const c = nums[i]
+    let jstart = 0
+    if (ret.length > 1 && ret.back().back() === c) {
+      jstart = nstart
     }
-  }
-  return ret
-}
 
-function dfs (pos, nums, path, ret) {
-  'use strict'
-  if (pos === nums.length) {
-    ret.push(path.slice())
-    return
-  }
-  path.push(nums[pos])
-  for (let i = pos + 1; i < nums.length; ++i) {
-    if (i === pos + 1 || nums[i] !== nums[i - 1]) {
-      dfs(i, nums, path, ret)
+    for (let j = jstart; j < nend; ++j) {
+      const v = ret[j].slice()
+      v.push(c)
+      ret.push(v)
     }
+    nstart = nend
+    nend = ret.length
   }
-  dfs(nums.length, nums, path, ret)
-  path.pop()
+
+  return ret
 }
 
 module.exports = subsetsWithDup

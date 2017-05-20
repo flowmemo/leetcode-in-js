@@ -24,30 +24,24 @@ If nums = [1,2,2], a solution is:
 var subsetsWithDup = function (nums) {
   'use strict'
   nums.sort((a, b) => a - b)
-  const ret = [[]]
+  const ret = []
   const path = []
-  for (let i = 0; i < nums.length; ++i) {
-    if (i === 0 || nums[i] !== nums[i - 1]) {
-      dfs(i, nums, path, ret)
-    }
-  }
+  dfs(0, nums, path, ret)
   return ret
 }
 
-function dfs (pos, nums, path, ret) {
+function dfs (p, nums, path, ret) {
   'use strict'
-  if (pos === nums.length) {
-    ret.push(path.slice())
-    return
-  }
-  path.push(nums[pos])
-  for (let i = pos + 1; i < nums.length; ++i) {
-    if (i === pos + 1 || nums[i] !== nums[i - 1]) {
-      dfs(i, nums, path, ret)
+  ret.push(path.slice())
+  for (let i = p; i < nums.length; ++i) {
+    if (i === p || nums[i] !== nums[i - 1]) {
+      path.push(nums[i])
+      dfs(i + 1, nums, path, ret)
+      path.pop()
     }
   }
-  dfs(nums.length, nums, path, ret)
-  path.pop()
+
+  return ret
 }
 
 module.exports = subsetsWithDup
