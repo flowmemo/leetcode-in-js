@@ -1,3 +1,4 @@
+const assert = require('assert')
 const TreeNode = require('./TreeNode.js')
 
 function genNode (val) {
@@ -20,6 +21,7 @@ function deserialize (data) {
 
 function buildFromArray (arr) {
   'use strict'
+  assert(Array.isArray(arr), 'The input is not Array')
   const len = arr.length
   if (!len) return null
   let index = 0
