@@ -75,16 +75,12 @@ var deserialize = function (data) {
  * deserialize(serialize(root));
  */
 
+module.exports = {
+  serialize,
+  deserialize
+}
+
 function TreeNode (val) {
   this.val = val
   this.left = this.right = null
 }
-
-let n1 = new TreeNode(1)
-let n2 = new TreeNode(2)
-let n3 = new TreeNode(3)
-n1.right = n2
-n2.right = n3
-let s = serialize(n1)
-console.log(s === serialize(deserialize(s)))
-console.log(deserialize(s))

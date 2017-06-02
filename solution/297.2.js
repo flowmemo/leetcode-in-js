@@ -30,6 +30,7 @@ Note: Do not use class member/global/static variables to store states. Your seri
  * @return {string}
  */
 var serialize = function (root) {
+  'use strict'
   const res = []
   if (!root) return JSON.stringify(res)
   const q = [root]
@@ -59,6 +60,7 @@ var serialize = function (root) {
  * @return {TreeNode}
  */
 var deserialize = function (data) {
+  'use strict'
   const arr = JSON.parse(data)
   const len = arr.length
   if (!len) return null
@@ -89,3 +91,13 @@ var deserialize = function (data) {
  * Your functions will be called as such:
  * deserialize(serialize(root));
  */
+
+module.exports = {
+  serialize,
+  deserialize
+}
+
+function TreeNode (val) {
+  this.val = val
+  this.left = this.right = null
+}
