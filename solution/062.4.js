@@ -18,17 +18,15 @@ Note: m and n will be at most 100.
  */
 var uniquePaths = function (m, n) {
   'use strict'
-  return factorial(m + n - 2) / factorial(m - 1) / factorial(n - 1)
-}
-
-function factorial (n) {
-  'use strict'
-  let res = 1
-  while (n) {
-    res *= n
-    --n
+  // (m + n) choose min(m, n)
+  let k = Math.min(m, n) - 1
+  let c = m + n - 2
+  let ret = 1
+  for (let i = 1; i <= k; ++i, --c) {
+    ret *= c
+    ret /= i
   }
-  return res
+  return ret
 }
 
 module.exports = uniquePaths

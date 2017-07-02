@@ -22,6 +22,7 @@ return 1->2->2->4->3->5.
  * @return {ListNode}
  */
 var partition = function (head, x) {
+  'use strict'
   const h1 = {}
   const h2 = {}
   let less = h1

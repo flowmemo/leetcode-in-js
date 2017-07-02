@@ -18,17 +18,14 @@ Note: m and n will be at most 100.
  */
 var uniquePaths = function (m, n) {
   'use strict'
-  return factorial(m + n - 2) / factorial(m - 1) / factorial(n - 1)
-}
-
-function factorial (n) {
-  'use strict'
-  let res = 1
-  while (n) {
-    res *= n
-    --n
+  const dp = Array(n).fill(0)
+  dp[0] = 1
+  for (let i = 0; i < m; ++i) {
+    for (let j = 1; j < n; ++j) {
+      dp[j] += dp[j - 1]
+    }
   }
-  return res
+  return dp[n - 1]
 }
 
 module.exports = uniquePaths

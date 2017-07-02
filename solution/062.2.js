@@ -17,6 +17,7 @@ Note: m and n will be at most 100.
  * @return {number}
  */
 var uniquePaths = function (m, n) {
+  'use strict'
   const dp = Array(m).fill().map(() => Array(n))
   for (let i = 0; i < m; ++i) dp[i][0] = 1
   for (let i = 0; i < n; ++i) dp[0][i] = 1
