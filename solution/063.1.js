@@ -27,17 +27,17 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
   const grid = obstacleGrid
   const m = grid.length
   const n = grid[0].length
-  const res = Array(m).fill().map(() => Array(n).fill(0))
-  res[0][0] = 1 - grid[0][0]
+  const ret = Array(m).fill().map(() => Array(n).fill(0))
+  ret[0][0] = 1 - grid[0][0]
   for (let i = 0; i < m; ++i) {
     for (let j = 0; j < n; ++j) {
       if (!grid[i][j]) {
-        if (i > 0) res[i][j] += res[i - 1][j]
-        if (j > 0) res[i][j] += res[i][j - 1]
+        if (i > 0) ret[i][j] += ret[i - 1][j]
+        if (j > 0) ret[i][j] += ret[i][j - 1]
       }
     }
   }
-  return res[m - 1][n - 1]
+  return ret[m - 1][n - 1]
 }
 
 module.exports = uniquePathsWithObstacles

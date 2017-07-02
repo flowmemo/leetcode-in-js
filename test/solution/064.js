@@ -1,4 +1,6 @@
-module.exports = [
+// 64. Minimum Path Sum
+
+const data = [
   {
     input: [
       [[0]]
@@ -12,3 +14,8 @@ module.exports = [
     ans: 7
   }
 ]
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}

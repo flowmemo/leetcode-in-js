@@ -1,4 +1,6 @@
-module.exports = [
+// 63. Unique Paths II
+
+const data = [
   {
     input: [
       [
@@ -10,3 +12,8 @@ module.exports = [
     ans: 2
   }
 ]
+
+module.exports = {
+  data,
+  checker: require('../checkers.js').normalChecker
+}
