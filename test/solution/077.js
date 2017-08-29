@@ -25,12 +25,12 @@ for (let { ans } of data) {
   sort2dArray(ans)
 }
 
-const options = {
+const option = {
   outProcessor: sort2dArray
 }
 
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

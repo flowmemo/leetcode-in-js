@@ -31,7 +31,7 @@ const data = [
   }
 ]
 
-const options = {
+const option = {
   inProcessor: input => {
     input[0] = input[0].map(line => line.split(''))
     return input
@@ -41,5 +41,5 @@ const options = {
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

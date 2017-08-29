@@ -13,12 +13,12 @@ const data = [
   }
 ]
 
-const options = {
+const option = {
   outProcessor: output => BinaryTree.convertToArray(output)
 }
 
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

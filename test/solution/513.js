@@ -15,11 +15,11 @@ const data = [
     ans: 6
   }
 ]
-const options = {
+const option = {
   inProcessor: input => input.map(buildFromArray)
 }
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

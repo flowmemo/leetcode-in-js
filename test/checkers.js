@@ -3,10 +3,10 @@ const assert = require('assert')
 const util = require('util')
 const cloneDeep = require('lodash').cloneDeep
 const I = x => x
-function normalChecker (fsolve, data, options = {}) {
-  const inProcessor = options.inProcessor || I
-  const outProcessor = options.outProcessor || I
-  const ansProcessor = options.ansProcessor || I
+function normalChecker (fsolve, data, option = {}) {
+  const inProcessor = option.inProcessor || I
+  const outProcessor = option.outProcessor || I
+  const ansProcessor = option.ansProcessor || I
   for (const {input, ans} of data) {
     const originInput = cloneDeep(input)
     const output = outProcessor(fsolve(...inProcessor(input)))

@@ -16,7 +16,7 @@ const data = [
   {
     input: [4],
     ans: [['.Q..', '...Q', 'Q...', '..Q.'],
-    ['..Q.', 'Q...', '...Q', '.Q..']]
+      ['..Q.', 'Q...', '...Q', '.Q..']]
   },
   {
     input: [5],
@@ -44,12 +44,12 @@ const data = [
 
 for (const { ans } of data) ans.sort()
 
-const options = {
+const option = {
   outProcessor: output => output.sort()
 }
 
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

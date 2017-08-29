@@ -14,7 +14,7 @@ const data = [
 
 for (const { ans } of data) ans.sort()
 
-const options = {
+const option = {
   inProcessor: input => input.map(buildFromArray),
   outProcessor: output => output.sort()
 }
@@ -22,5 +22,5 @@ const options = {
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

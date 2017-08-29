@@ -28,7 +28,7 @@ const data = [
 
 for (const { ans } of data) ans.sort()
 
-const options = {
+const option = {
   outProcessor: output => output.sort()
 }
 
@@ -37,5 +37,5 @@ const checker = require('../checkers.js').normalChecker
 module.exports = {
   data,
   checker,
-  options
+  option
 }

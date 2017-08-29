@@ -3,24 +3,24 @@
 const data = [
   {
     input: [['Shogun', 'Tapioca Express', 'Burger King', 'KFC'],
-    ['Piatti', 'The Grill at Torrey Pines', 'Hungry Hunter Steakhouse', 'Shogun']],
+      ['Piatti', 'The Grill at Torrey Pines', 'Hungry Hunter Steakhouse', 'Shogun']],
     ans: ['Shogun']
   },
   {
     input: [['Shogun', 'Tapioca Express', 'Burger King', 'KFC'],
-    ['KFC', 'Shogun', 'Burger King']],
+      ['KFC', 'Shogun', 'Burger King']],
     ans: ['Shogun']
   }
 ]
 
 for (const {ans} of data) ans.sort()
 
-const options = {
+const option = {
   outProcessor: output => output.sort()
 }
 
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

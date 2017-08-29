@@ -7,12 +7,12 @@ const data = [
   }
 ]
 
-const options = {
+const option = {
   outProcessor: output => output.sort((a, b) => a - b)
 }
 
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

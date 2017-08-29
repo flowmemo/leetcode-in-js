@@ -24,7 +24,7 @@ function outProcessor (output) {
   return LinkedList.convertToArray(output)
 }
 
-const options = {
+const option = {
   inProcessor,
   outProcessor
 }
@@ -32,5 +32,5 @@ const options = {
 module.exports = {
   data,
   checker,
-  options
+  option
 }

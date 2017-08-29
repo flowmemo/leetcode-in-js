@@ -29,13 +29,13 @@ const data = [
   }
 ]
 
-const options = {
+const option = {
   inProcessor: input => {
     input[0].map(line => Array.from(line))
     return input
   }
 }
-const checker = function (fsolve, data, options) {
+const checker = function (fsolve, data, option) {
   'use strict'
   for (const {input, inputShouldBecome} of data) {
     const board = input[0].map(line => Array.from(line))
@@ -50,5 +50,5 @@ const checker = function (fsolve, data, options) {
 module.exports = {
   data,
   checker,
-  options
+  option
 }

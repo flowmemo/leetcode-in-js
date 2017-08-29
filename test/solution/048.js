@@ -19,7 +19,7 @@ const data = [
   }
 ]
 
-const checker = function (fsolve, data, options) {
+const checker = function (fsolve, data, option) {
   'use strict'
   for (const { input, inputShouldBecome } of data) {
     const origin = cloneDeep(input)

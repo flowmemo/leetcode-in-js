@@ -21,15 +21,15 @@ const data = [
   }
 ]
 
-const options = {
+const option = {
   inProcessor: input => {
     input[0] = input[0].map(line => line.split(''))
     return input
   },
   outProcessor: output => output.map(line => line.join(''))
 }
-const checker = function (fsolve, data, options) {
-  const inProcessor = options.inProcessor || (d => d)
+const checker = function (fsolve, data, option) {
+  const inProcessor = option.inProcessor || (d => d)
   for (const {input, ans, inputShouldBecome} of data) {
     const origin = cloneDeep(input)
     const result = fsolve(...inProcessor(input))
@@ -46,6 +46,6 @@ const checker = function (fsolve, data, options) {
 
 module.exports = {
   data,
-  options,
+  option,
   checker
 }

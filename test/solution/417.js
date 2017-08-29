@@ -20,11 +20,11 @@ function sort (res) {
   })
 }
 
-const options = {
+const option = {
   outProcessor: sort
 }
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

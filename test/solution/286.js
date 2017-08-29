@@ -8,13 +8,13 @@ const data = [
   {
     input: [[[2147483647, -1, 0, 2147483647], [2147483647, 2147483647, 2147483647, -1], [2147483647, -1, 2147483647, -1], [0, -1, 2147483647, 2147483647]]],
     inputShouldBecome: [[[3, -1, 0, 1],
-    [2, 2, 1, -1],
-    [1, -1, 2, -1],
-    [0, -1, 3, 4]]]
+      [2, 2, 1, -1],
+      [1, -1, 2, -1],
+      [0, -1, 3, 4]]]
   }
 ]
 
-const checker = function (fsolve, data, options) {
+const checker = function (fsolve, data, option) {
   'use strict'
   for (const { input, inputShouldBecome } of data) {
     const origin = cloneDeep(input)

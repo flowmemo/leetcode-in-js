@@ -17,7 +17,7 @@ function Interval (start, end) {
   this.end = end
 }
 
-const options = {
+const option = {
   inProcessor: input => {
     input[0] = input[0].map(a => new Interval(...a))
     return input
@@ -30,5 +30,5 @@ const options = {
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

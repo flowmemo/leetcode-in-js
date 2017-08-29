@@ -15,7 +15,7 @@ const data = [
   }
 ]
 
-const options = {
+const option = {
   outProcessor: output => output.sort()
 }
 

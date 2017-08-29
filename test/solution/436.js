@@ -15,14 +15,14 @@ const data = [
   }
 ]
 
-const options = {
+const option = {
   inProcessor: input => [input[0].map(v => new Interval(v[0], v[1]))]
 }
 
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }
 
 function Interval (start, end) {

@@ -33,7 +33,7 @@ const levelOrderCustom = function (root) {
   return res
 }
 
-const checker = function (fsolve, data, options = {}) {
+const checker = function (fsolve, data, option = {}) {
   for (const {input, ans, levelOrderTraversal} of data) {
     const root = BinaryTree.buildFromArray(input[0])
     const result = fsolve(root)

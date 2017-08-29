@@ -21,8 +21,8 @@ const data = [
   }
 ]
 
-const checker = function (fsolve, data, options = {}) {
-  const inProcessor = options.inProcessor || (d => d)
+const checker = function (fsolve, data, option = {}) {
+  const inProcessor = option.inProcessor || (d => d)
   for (const {input, ans, inputShouldBecome} of data) {
     const origin = cloneDeep(input)
     const root = inProcessor(input)[0]
@@ -38,12 +38,12 @@ const checker = function (fsolve, data, options = {}) {
   }
 }
 
-const options = {
+const option = {
   inProcessor: input => input.map(buildFromArray)
 }
 
 module.exports = {
   data,
   checker,
-  options
+  option
 }

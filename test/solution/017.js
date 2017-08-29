@@ -9,12 +9,12 @@ const data = [
 
 for (const tc of data) tc.ans = new Set(tc.ans)
 
-const options = {
+const option = {
   outProcessor: out => new Set(out)
 }
 
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

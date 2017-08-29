@@ -8,12 +8,12 @@ const data = [
   }
 ]
 
-const options = {
+const option = {
   inProcessor: input => input.map(buildFromArray),
   outProcessor: output => convertToArray(output)
 }
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

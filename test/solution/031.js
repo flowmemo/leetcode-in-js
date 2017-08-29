@@ -17,9 +17,9 @@ const data = [
   }
 ]
 
-const checker = function (fsolve, data, options = {}) {
-  const inProcessor = options.inProcessor || (d => d)
-  const outProcessor = options.outProcessor || (d => d)
+const checker = function (fsolve, data, option = {}) {
+  const inProcessor = option.inProcessor || (d => d)
+  const outProcessor = option.outProcessor || (d => d)
   for (const {input, ans, inputShouldBecome} of data) {
     const origin = cloneDeep(input)
     const result = outProcessor(fsolve(...inProcessor(input)))

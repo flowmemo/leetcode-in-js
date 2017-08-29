@@ -11,9 +11,9 @@ fs.readdir('./solution', (err, allFiles) => {
     const id = file.slice(0, 3)
     try {
       const fixtures = cloneDeep(require(`./solution/${id}.js`))
-      const {data, checker, options} = fixtures
+      const {data, checker, option} = fixtures
       const solution = require(`../solution/${file}`)
-      checker(solution, data, options)
+      checker(solution, data, option)
     } catch (err) {
       fail++
       const errType = err.name

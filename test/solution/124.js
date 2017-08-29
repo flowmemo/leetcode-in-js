@@ -7,7 +7,7 @@ const data = [
     ans: 6
   }
 ]
-const options = {
+const option = {
   inProcessor: input => {
     input[0] = buildFromArray(input[0])
     return input
@@ -16,5 +16,5 @@ const options = {
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }

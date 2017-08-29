@@ -4,9 +4,9 @@ const data = [
   {
     input: [[1, 0, -1, 0, -2, 2], 0],
     ans: [
-  [-1, 0, 0, 1],
-  [-2, -1, 1, 2],
-  [-2, 0, 0, 2]
+      [-1, 0, 0, 1],
+      [-2, -1, 1, 2],
+      [-2, 0, 0, 2]
     ]
   }
 ]
@@ -15,13 +15,13 @@ for (const {ans} of data) {
   sort2dArray(ans)
 }
 
-const options = {
+const option = {
   outProcessor: sort2dArray
 }
 module.exports = {
   data,
   checker: require('../checkers.js').normalChecker,
-  options
+  option
 }
 
 function sort2dArray (arr) {

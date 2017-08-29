@@ -25,7 +25,7 @@ for (let i = 0; i < inputs.length; ++i) {
   data.push({ input: inputs[i], inputShouldBecome: anses[i] })
 }
 
-const checker = function (fsolve, data, options) {
+const checker = function (fsolve, data, option) {
   'use strict'
   for (const { input, inputShouldBecome } of data) {
     const origin = cloneDeep(input)

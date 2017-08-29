@@ -6,7 +6,7 @@ const data = [
       'ABCE',
       'SFCS',
       'ADEE'],
-      'ABCCED'],
+    'ABCCED'],
     ans: true
   },
   {
@@ -14,7 +14,7 @@ const data = [
       'ABCE',
       'SFCS',
       'ADEE'],
-      'SEE'],
+    'SEE'],
     ans: true
   },
   {
@@ -22,13 +22,13 @@ const data = [
       'ABCE',
       'SFCS',
       'ADEE'],
-      'ABCB'],
+    'ABCB'],
     ans: false
   },
   {
     input: [[
       'a'],
-      'a'],
+    'a'],
     ans: true
   },
   {
@@ -219,12 +219,12 @@ const data = [
       'qgffvshucbzhikbtfrbrqztrwzuvfngvwlcrfjnhmoqvarqflrzbsuuovojadpvzcasilipyyitzzlgkehnwbhmxxxzdpverxzzihrghzbiampnqyaoa',
       'kczhaampvrgssidbzjiylrazinsgoiialhjliwcfpiahqdirosrbjsdrfvyvfgvqqfdadfhsqjbiojaddtgnljgtegqkpmcftghylqqdarmocmtffaut',
       'jboqjecysefnmmlafbdfupvydrgltaecdsunyylrfrerfqrktvrompoqgudzxjdadapbybsduzvbromklfaywpqcjvdgejjhlyijbdpxekzvanfmsgmp'],
-      'oajgdkcokvfpdaslnmomrpgwitwdoku'],
+    'oajgdkcokvfpdaslnmomrpgwitwdoku'],
     ans: true
   }
 ]
 
-const options = {
+const option = {
   inProcessor: input => {
     'use strict'
     input[0] = input[0].map(line => line.split(''))
@@ -237,5 +237,5 @@ const checker = require('../checkers.js').normalChecker
 module.exports = {
   data,
   checker,
-  options
+  option
 }
