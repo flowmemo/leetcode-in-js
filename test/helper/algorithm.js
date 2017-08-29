@@ -56,4 +56,3 @@ assert.strictEqual(binarySearch(tc1, 0, tc1.length, 5), true)
 assert.strictEqual(binarySearch(tc1, 0, tc1.length, -1), false)
 
 assert.strictEqual(binarySearch(tc2, 0, tc2.length, 1, greater), true)
-

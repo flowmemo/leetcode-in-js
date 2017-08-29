@@ -2,22 +2,23 @@
 
 const data = [
   {
-    input: [['cbatbac', 'abc']],
+    input: ['cbatbac', 'abc'],
     ans: [0, 4]
   },
   {
-    input: [['cbaebabacd', 'abc']],
+    input: ['cbaebabacd', 'abc'],
     ans: [0, 6]
   },
   {
-    input: [['abab', 'ab']],
-    ans: [0, 1, 2]
-  },{
-    input: [['aabaa', 'aab']],
+    input: ['abab', 'ab'],
     ans: [0, 1, 2]
   },
   {
-    input: [['aaaaaaa', 'aaa']],
+    input: ['aabaa', 'aab'],
+    ans: [0, 1, 2]
+  },
+  {
+    input: ['aaaaaaa', 'aaa'],
     ans: [0, 1, 2, 3, 4]
   }
 ]
