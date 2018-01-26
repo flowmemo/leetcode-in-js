@@ -3,6 +3,7 @@ const validFile = /^\d{3}(\.\d+)?\.js$/
 const cloneDeep = require('lodash').cloneDeep
 
 fs.readdir('./solution', (err, allFiles) => {
+  'use strict'
   if (err) throw err
   let fail = 0
   let stat = Object.create(null)
@@ -11,9 +12,11 @@ fs.readdir('./solution', (err, allFiles) => {
     const id = file.slice(0, 3)
     try {
       const fixtures = cloneDeep(require(`./solution/${id}.js`))
-      const {data, checker, option} = fixtures
+      const { data, checker, option } = fixtures
       const solution = require(`../solution/${file}`)
+      console.log(`test ${file} ...`)
       checker(solution, data, option)
+      console.log(`${file} passed`)
     } catch (err) {
       fail++
       const errType = err.name
