@@ -9,7 +9,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "coveralls": "^2.13.3",
-    "eslint": "^4.15.0",
+    "eslint": "^4.16.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
@@ -25,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flowmemo/leetcode.git"
+    "url": "git+https://github.com/flowmemo/leetcode-in-js.git"
   },
   "author": "flowmemo",
   "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/flowmemo/leetcode/issues"
+    "url": "https://github.com/flowmemo/leetcode-in-js/issues"
   },
-  "homepage": "https://github.com/flowmemo/leetcode#readme"
+  "homepage": "https://github.com/flowmemo/leetcode-in-js#readme"
 }
