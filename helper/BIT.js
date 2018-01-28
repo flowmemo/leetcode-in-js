@@ -1,4 +1,4 @@
-// Binary Indexed Tree
+// Binary Indexed Tree - Sum
 
 class BIT {
   constructor (arr) {
