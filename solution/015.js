@@ -18,6 +18,7 @@ A solution set is:
  * @return {number[][]}
  */
 var threeSum = function (nums) {
+  'use strict'
   const n = nums.length
   const res = []
   nums.sort((a, b) => a - b)
@@ -30,13 +31,13 @@ var threeSum = function (nums) {
       if (j > i + 1 && nums[j] === nums[j - 1]) ++j
       else if (k < n - 1 && nums[k] === nums[k + 1]) --k
       else
-        if (nums[j] + nums[k] < target) ++j
-        else if (nums[j] + nums[k] > target) --k
-        else {
-          res.push([-target, nums[j], nums[k]])
-          ++j
-          --k
-        }
+      if (nums[j] + nums[k] < target) ++j
+      else if (nums[j] + nums[k] > target) --k
+      else {
+        res.push([-target, nums[j], nums[k]])
+        ++j
+        --k
+      }
     }
   }
   return res

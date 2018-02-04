@@ -17,4 +17,3 @@ var containsDuplicate = function (nums) {
 }
 
 module.exports = containsDuplicate
-  

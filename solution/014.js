@@ -8,6 +8,7 @@ Write a function to find the longest common prefix string amongst an array of st
 * @return {string}
 */
 var longestCommonPrefix = function (strs) {
+  'use strict'
   const n = strs.length
   if (!n) return ''
   const s = strs[0]

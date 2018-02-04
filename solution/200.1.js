@@ -39,7 +39,7 @@ var numIslands = function (grid) {
       if (!visited[i][j] && grid[i][j] === '1') {
         ret++
 
-                // bfs
+        // bfs
 
         visited[i][j] = 1
         const q = [[i, j]]

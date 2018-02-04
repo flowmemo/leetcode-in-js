@@ -27,7 +27,7 @@ var jump = function (nums) {
   let right = 0
   let nright = right
   while (right < target) {
-      // [left, right] can be reached in `res` steps.
+    // [left, right] can be reached in `res` steps.
     for (let i = left; i <= right; ++i) {
       nright = Math.max(nright, nums[i] + i)
     }

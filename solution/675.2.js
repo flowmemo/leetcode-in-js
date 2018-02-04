@@ -11,7 +11,7 @@ You will start from the point (0, 0) and you should output the minimum steps you
 You are guaranteed that no two trees have the same height and there is at least one tree needs to be cut off.
 
 Example 1:
-Input: 
+Input:
 [
  [1,2,3],
  [0,0,4],
@@ -19,7 +19,7 @@ Input:
 ]
 Output: 6
 Example 2:
-Input: 
+Input:
 [
  [1,2,3],
  [0,0,0],
@@ -27,7 +27,7 @@ Input:
 ]
 Output: -1
 Example 3:
-Input: 
+Input:
 [
  [2,3,4],
  [0,0,5],

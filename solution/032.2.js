@@ -22,8 +22,8 @@ var longestValidParentheses = function (s) {
       else {
         const ci = i - dp[i - 1] - 2
         dp[i] = s[ci] === '('
-                ? dp[i - 1] + dp[ci] + 2
-                : 0
+          ? dp[i - 1] + dp[ci] + 2
+          : 0
       }
       res = Math.max(res, dp[i])
     }

@@ -35,9 +35,10 @@ After calling your function, the tree should look like:
  * @return {void} Do not return anything, modify tree in-place instead.
  */
 var connect = function (root) {
+  'use strict'
   let node = root
   while (node) {
-      // find first non-null child
+    // find first non-null child
     let chd = null
     while (node) {
       if (node.left) {
@@ -55,7 +56,7 @@ var connect = function (root) {
 
     while (chd && node) {
       let next = null
-        // find next node of chd
+      // find next node of chd
       if (node.left === chd) {
         if (node.right) {
           next = node.right

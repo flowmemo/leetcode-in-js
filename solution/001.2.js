@@ -19,6 +19,7 @@ The return format had been changed to zero-based indices. Please read the above 
 * @return {number[]}
 */
 var twoSum = function (nums, target) {
+  'use strict'
   const n = nums.length
   const v = Array(n)
   for (let i = 0; i < n; ++i) v[i] = i

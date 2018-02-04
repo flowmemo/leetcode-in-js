@@ -1,5 +1,5 @@
 /*
-664. Strange Printer 
+664. Strange Printer
 There is a strange printer with the following two special requirements:
 
 1. The printer can only print a sequence of the same character each time.

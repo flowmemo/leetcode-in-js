@@ -21,6 +21,7 @@ If n = 4 and k = 2, a solution is:
  * @return {number[][]}
  */
 var combine = function (n, k) {
+  'use strict'
   const res = []
   for (let i = 1; i <= n + 1 - k; ++i) {
     dfs(i, n, k, [], res)
@@ -29,9 +30,10 @@ var combine = function (n, k) {
 }
 
 function dfs (pos, n, rcount, path, res) {
+  'use strict'
   path.push(pos)
   rcount--
-  if (rcount == 0) {
+  if (rcount === 0) {
     res.push(path.slice())
     path.pop()
     return

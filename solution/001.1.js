@@ -19,6 +19,7 @@ The return format had been changed to zero-based indices. Please read the above 
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
+  'use strict'
   const map = new Map()
   for (let i = 0; i < nums.length; ++i) {
     let cur = nums[i]

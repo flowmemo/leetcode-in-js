@@ -22,7 +22,8 @@ Note: Given n will be between 1 and 9 inclusive.
  * @return {string}
  */
 var getPermutation = function (n, k) {
-  let res = ''
+  'use strict'
+  let ret = ''
   const used = Array(n)
   function findChar (n) {
     let i = 0
@@ -34,21 +35,22 @@ var getPermutation = function (n, k) {
     used[i - 1] = true
     return i
   }
+  k--
   while (n) {
-    let order = (k - 1) / factorial(n - 1) + 1 | 0
-    let digit = findChar(order)
-    res += digit
-    k = (k - 1) % factorial(n - 1) + 1
+    let order = k / factorial(n - 1) | 0
+    let digit = findChar(order + 1)
+    ret += digit
+    k = k - order * factorial(n - 1)
     --n
   }
-  return res
+  return ret
 }
 
 function factorial (n) {
+  'use strict'
   let r = 1
   while (n) {
-    r *= n
-    --n
+    r *= n--
   }
   return r
 }

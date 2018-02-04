@@ -19,6 +19,7 @@ You may assume the number of calls to update and sumRange function is distribute
  * @param {number[]} nums
  */
 var NumArray = function (nums) {
+  'use strict'
   const len = nums.length
   this.nums = Array(len).fill(0)
   this.len = len
@@ -35,13 +36,17 @@ var NumArray = function (nums) {
  * @return {void}
  */
 NumArray.prototype.update = function (i, val) {
+  'use strict'
   const diff = val - this.nums[i]
   const a = this.a
   this.nums[i] = val
   let index = i + 1
   while (index <= this.len) {
     a[index] += diff
-    index = index + (index & (-index))
+    // index = index + (index & (-index))
+    // index += index ^ (index & (index - 1))
+    // index += (index | (index & (index - 1))) & ~(index & (index & (index - 1)))
+    index += index & ~(index & (index - 1))
   }
 }
 
@@ -51,10 +56,12 @@ NumArray.prototype.update = function (i, val) {
  * @return {number}
  */
 NumArray.prototype.sumRange = function (i, j) {
+  'use strict'
   return this.getSum(j) - this.getSum(i - 1)
 }
 
 NumArray.prototype.getSum = function (i) {
+  'use strict'
   let index = i + 1
   const a = this.a
   let ans = 0

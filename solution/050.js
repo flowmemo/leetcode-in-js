@@ -9,6 +9,7 @@ Implement pow(x, n).
  * @return {number}
  */
 var myPow = function (x, n) {
+  'use strict'
   let res = 1
   if (n < 0) {
     x = 1 / x
