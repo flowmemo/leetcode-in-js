@@ -43,7 +43,7 @@ Note:
  */
 var movesToChessboard = function (board) {
   'use strict'
-  const min = Math.min
+  const { abs, min } = Math
   const n = board.length
   for (let i = 0; i < n; ++i) {
     for (let j = 0; j < n; ++j) {
@@ -57,6 +57,11 @@ var movesToChessboard = function (board) {
   for (let i = 0; i < n; ++i) row[i] = board[0][i] & 1
 
   function sol (v) {
+    {
+      let ct1 = 0
+      for (const c of v) ct1 += c
+      if (abs(v.length - ct1 - ct1) > 1) return Infinity
+    }
     const tar = Array(n).fill().map((a, i) => i % 2)
     let ret = Infinity
     {
