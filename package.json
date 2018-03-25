@@ -4,18 +4,18 @@
   "description": "LeetCode solutions in JavaScript",
   "main": "index.js",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "coveralls": "^2.13.3",
-    "eslint": "^4.16.0",
+    "eslint": "^4.19.1",
     "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
-    "nyc": "^11.4.1"
+    "nyc": "^11.6.0"
   },
   "scripts": {
     "test": "node test/helper/algorithm.js && node test/solutions.js",
